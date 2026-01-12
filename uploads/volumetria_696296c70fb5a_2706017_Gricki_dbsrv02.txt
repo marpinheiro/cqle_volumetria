@@ -1,0 +1,882 @@
+############################################SERVIDOR#####################################################
+Hostname: dbsrv02.gricki.local
+IP: XXX.XXX.XXX.XX
+S.O: Red Hat Enterprise Linux Server release 7.6 (Maipo)
+Versão Banco:Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+Fabricante:Dell Inc.
+Modelo:PowerEdge R660
+Service Tag:5KDRF14
+Qtd. Proc:2
+Modelo. Proc:Intel(R) Xeon(R) Gold 6434
+Multi-Processamento:32
+Memória:253 Gb
+
+
+Filesystem                 Type  Size  Used Avail Use% Mounted on
+/dev/mapper/system-root    ext4   25G  4.9G   19G  22% 	
+/dev/sda2                  ext4  488M  309M  143M  69% 	
+/dev/mapper/system-tmp     ext4  9.8G  9.4M  9.3G   1% 	
+/dev/mapper/system-var     ext4  9.8G  741M  8.6G   8% 	
+/dev/mapper/system-var_log ext4   20G  128M   19G   1% 	
+/dev/sda1                  vfat  128M  6.4M  122M   5% 	
+/dev/mapper/data-oracle    ext4  8.6T  7.5T  705G  92% 	
+
+
+Instancias:1
+##########################################BANCO##########################################################
+Nome Instância:orcl
+Tipo: Produção
+Tamanho Banco Físico:
+Database Size       |Used space          |Free space
+7349 GB             |6908 GB             |441 GB
+
+Tamanho Banco Lógico:
+_________Size_|_Type__________
+   1,964,811M | INDEX
+           0M | INDEX PARTITION
+           3M | LOB PARTITION
+         227M | LOBINDEX
+     276,027M | LOBSEGMENT
+           0M | NESTED TABLE
+   4,685,178M | TABLE
+          11M | TABLE PARTITION
+--------------|----------------
+     6,763.9G | Total
+
+
+Crescimento da base:
+Date___|TotalUsage|MonthGrown|Percentage
+May2024|  3,766.5G| -234,916M|    106.5%
+Jun2024|  3,537.1G| +137,490M|    100.0%
+Jul2024|  3,671.4G| +170,377M|    103.8%
+Aug2024|  3,837.8G| +226,953M|    108.5%
+Sep2024|  4,059.4G| +258,005M|    114.8%
+Oct2024|  4,311.4G| +300,375M|    121.9%
+Nov2024|  4,604.7G| +412,445M|    130.2%
+Dec2024|  5,007.5G| +264,518M|    141.6%
+Jan2025|  5,265.8G|  +74,344M|    148.9%
+Feb2025|  5,338.4G| +228,541M|    150.9%
+Mar2025|  5,561.6G| +281,090M|    157.2%
+Apr2025|  5,836.1G| +304,007M|    165.0%
+May2025|  6,133.0G| +349,446M|    173.4%
+Jun2025|  6,474.2G| +315,464M|    183.0%
+Jul2025|  6,782.3G| +297,708M|    191.7%
+Aug2025|  7,073.0G| +179,176M|    200.0%
+Sep2025|  7,248.0G|       +0M|    204.9%
+
+Geração de archives:
+HH = [   01Sep |   02Sep |   03Sep |   04Sep |   05Sep |   06Sep |   07Sep |   08Sep |  09Sep ]
+-- = [---------|---------|---------|---------|---------|---------|---------|---------|--------]
+00 = [   4,569M|   2,110M|   1,980M|   1,780M|   2,074M|   2,374M|   2,160M|   3,039M|  2,389M]
+01 = [  12,259M|   6,919M|   6,760M|   6,635M|  26,284M|   6,728M|   6,715M|   6,842M|  6,795M]
+02 = [   7,056M|   3,006M|   2,891M|   2,390M|   2,348M|   3,157M|   3,214M|   3,508M|  3,290M]
+03 = [   9,922M|   4,755M|   5,271M|   3,982M|   1,805M|   4,661M|   4,481M|   5,589M|  4,749M]
+04 = [  16,344M|  17,075M|  16,758M|  14,811M|  16,507M|  16,046M|  15,882M|  16,299M| 16,077M]
+05 = [  16,937M|  19,782M|  23,686M|  26,613M|  30,038M|  33,814M|  38,135M|  41,760M| 26,601M]
+06 = [   1,878M|   1,907M|   1,856M|   1,838M|   1,851M|   1,753M|   1,030M|   1,838M| 20,469M]
+07 = [   9,987M|  10,052M|   9,943M|   9,803M|   9,910M|   9,962M|   1,290M|   9,739M| 10,019M]
+08 = [   3,762M|   2,911M|  14,863M|   2,763M|  20,888M|   2,667M|   2,023M|   3,181M|  3,430M]
+09 = [   3,623M|   3,879M|  18,496M|   3,137M|  27,277M|   3,921M|   2,599M|   3,483M|  2,137M]
+10 = [   5,211M|   5,157M|   4,250M|   4,272M|  28,364M|   4,887M|   3,666M|   4,805M|        ]
+11 = [   4,959M|   5,248M|   5,184M|   4,611M|   5,049M|   5,545M|   4,162M|   4,682M|        ]
+12 = [   4,570M|   3,986M|   3,539M|   3,197M|   4,516M|   4,937M|   3,900M|   4,093M|        ]
+13 = [   3,637M|   3,914M|   3,823M|   3,451M|   3,343M|   4,498M|   3,253M|   3,574M|        ]
+14 = [   5,212M|   4,284M|   4,681M|   5,436M|   4,840M|   3,661M|   2,256M|   3,921M|        ]
+15 = [   5,321M|   5,493M|   3,878M|   3,266M|  23,046M|   4,043M|   2,424M|   5,103M|        ]
+16 = [   5,381M|   6,178M|   4,271M|  58,143M|   4,761M|   4,291M|   2,533M|   4,689M|        ]
+17 = [   5,100M|   4,618M|   3,577M|  11,079M|  15,080M|   4,375M|   2,505M|   5,140M|        ]
+18 = [   4,515M|   4,099M|   3,412M|   3,437M|   4,539M|   3,749M|   2,532M|   4,396M|        ]
+19 = [   3,747M|   3,570M|   2,885M|   3,103M|   4,259M|   3,537M|   2,317M|   3,630M|        ]
+20 = [   3,890M|   3,561M|   3,121M|   2,780M|   3,826M|   3,356M|   2,337M|   3,551M|        ]
+21 = [   3,278M|   3,113M|   2,228M|   2,083M|   2,944M|   2,546M|   1,153M|   3,060M|        ]
+22 = [   2,053M|   1,766M|   1,453M|   1,440M|   1,701M|   1,179M|   1,849M|   1,750M|        ]
+23 = [   5,811M|   5,362M|   7,488M|   5,719M|   6,329M|   5,091M|  12,971M|   5,617M|        ]
+-- = [---------|---------|---------|---------|---------|---------|---------|---------|--------]
+DD = [ 149,025M| 132,744M| 156,295M| 185,770M| 251,580M| 140,778M| 125,389M| 153,289M| 95,955M]
+
+
+Local dos archives:
+/oracle/archive/orcl/
+
+Local físico dos datafiles e tamanho:
+		  FID|TBS                 |FN                                                                                   |           PCT|  MB_USED|   MB_MAX
+            1|SYSTEM              |/oracle/oradata/orcl/system01.dbf                                                    |            30|     8929|    30000
+            2|SYSAUX              |/oracle/oradata/orcl/sysaux01.dbf                                                    |           100|    30000|    30000
+            3|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw004.dbf                                           |            29|     8800|    30000
+            4|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio001.dbf                                             |           100|    30000|    30000
+            5|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio002.dbf                                             |           100|    30000|    30000
+            6|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio003.dbf                                             |           100|    30000|    30000
+            7|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio004.dbf                                             |           100|    30000|    30000
+            8|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio005.dbf                                             |           100|    30000|    30000
+            9|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio006.dbf                                             |           100|    30000|    30000
+           10|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio007.dbf                                             |           100|    30000|    30000
+           11|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio008.dbf                                             |           100|    30000|    30000
+           12|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio009.dbf                                             |           100|    30000|    30000
+           13|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio010.dbf                                             |           100|    30000|    30000
+           14|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio011.dbf                                             |           100|    30000|    30000
+           15|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio012.dbf                                             |           100|    30000|    30000
+           16|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio013.dbf                                             |           100|    30000|    30000
+           17|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio014.dbf                                             |           100|    30000|    30000
+           18|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio015.dbf                                             |           100|    30000|    30000
+           19|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio016.dbf                                             |           100|    30000|    30000
+           20|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio017.dbf                                             |           100|    30000|    30000
+           21|TEMP1               |/oracle/oradata/orcl/temp1_01.dbf                                                    | 			100|    30000|        0
+           21|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio018.dbf                                             |           100|    30000|    30000
+           22|TEMP1               |/oracle/oradata/orcl/temp1_02.dbf                                                    | 			100|    30000|        0
+           22|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio019.dbf                                             |           100|    30000|    30000
+           23|TEMP1               |/oracle/oradata/orcl/temp1_03.dbf                                                    | 			100|    30000|        0
+           23|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio020.dbf                                             |           100|    30000|    30000
+           24|TEMP1               |/oracle/oradata/orcl/temp1_04.dbf                                                    | 			100|    30000|        0
+           24|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio021.dbf                                             |           100|    30000|    30000
+           25|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio022.dbf                                             |           100|    30000|    30000
+           26|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio023.dbf                                             |           100|    30000|    30000
+           27|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio024.dbf                                             |           100|    30000|    30000
+           28|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio025.dbf                                             |           100|    30000|    30000
+           29|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio026.dbf                                             |           100|    30000|    30000
+           30|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio027.dbf                                             |           100|    30000|    30000
+           31|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio028.dbf                                             |           100|    30000|    30000
+           32|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio029.dbf                                             |           100|    30000|    30000
+           33|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio030.dbf                                             |           100|    30000|    30000
+           34|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio031.dbf                                             |           100|    30000|    30000
+           35|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio032.dbf                                             |           100|    30000|    30000
+           36|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio033.dbf                                             |           100|    30000|    30000
+           37|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio034.dbf                                             |           100|    30000|    30000
+           38|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio035.dbf                                             |           100|    30000|    30000
+           39|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio036.dbf                                             |           100|    30000|    30000
+           40|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio037.dbf                                             |           100|    30000|    30000
+           41|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio038.dbf                                             |           100|    30000|    30000
+           42|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio039.dbf                                             |           100|    30000|    30000
+           43|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio040.dbf                                             |           100|    30000|    30000
+           44|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio041.dbf                                             |           100|    30000|    30000
+           45|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio042.dbf                                             |           100|    30000|    30000
+           46|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio043.dbf                                             |           100|    30000|    30000
+           47|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio044.dbf                                             |           100|    30000|    30000
+           48|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio045.dbf                                             |           100|    30000|    30000
+           49|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio046.dbf                                             |           100|    30000|    30000
+           50|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio047.dbf                                             |           100|    30000|    30000
+           51|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio048.dbf                                             |           100|    30000|    30000
+           52|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio049.dbf                                             |           100|    30000|    30000
+           53|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio050.dbf                                             |           100|    30000|    30000
+           54|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio051.dbf                                             |           100|    30000|    30000
+           55|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio052.dbf                                             |           100|    30000|    30000
+           56|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio053.dbf                                             |           100|    30000|    30000
+           57|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio054.dbf                                             |           100|    30000|    30000
+           58|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio055.dbf                                             |           100|    30000|    30000
+           59|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio056.dbf                                             |           100|    30000|    30000
+           60|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio057.dbf                                             |           100|    30000|    30000
+           61|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio058.dbf                                             |           100|    30000|    30000
+           62|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio059.dbf                                             |           100|    30000|    30000
+           63|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio060.dbf                                             |           100|    30000|    30000
+           64|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio061.dbf                                             |           100|    30000|    30000
+           65|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio062.dbf                                             |           100|    30000|    30000
+           66|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio063.dbf                                             |           100|    30000|    30000
+           67|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio064.dbf                                             |           100|    30000|    30000
+           68|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio065.dbf                                             |           100|    30000|    30000
+           69|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio066.dbf                                             |           100|    30000|    30000
+           70|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio067.dbf                                             |           100|    30000|    30000
+           71|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio068.dbf                                             |           100|    30000|    30000
+           72|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio069.dbf                                             |           100|    30000|    30000
+           73|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio070.dbf                                             |           100|    30000|    30000
+           74|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio071.dbf                                             |           100|    30000|    30000
+           75|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio072.dbf                                             |           100|    30000|    30000
+           76|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio073.dbf                                             |           100|    30000|    30000
+           77|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio074.dbf                                             |           100|    30000|    30000
+           78|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio075.dbf                                             |           100|    30000|    30000
+           79|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio076.dbf                                             |           100|    30000|    30000
+           80|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio077.dbf                                             |           100|    30000|    30000
+           81|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio078.dbf                                             |           100|    30000|    30000
+           82|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio079.dbf                                             |           100|    30000|    30000
+           83|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio080.dbf                                             |           100|    30000|    30000
+           84|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio081.dbf                                             |           100|    30000|    30000
+           85|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio082.dbf                                             |           100|    30000|    30000
+           86|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio083.dbf                                             |           100|    30000|    30000
+           87|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio084.dbf                                             |           100|    30000|    30000
+           88|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio085.dbf                                             |           100|    30000|    30000
+           89|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio086.dbf                                             |           100|    30000|    30000
+           90|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio087.dbf                                             |           100|    30000|    30000
+           91|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio088.dbf                                             |           100|    30000|    30000
+           92|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio089.dbf                                             |           100|    30000|    30000
+           93|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio090.dbf                                             |           100|    30000|    30000
+           94|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio091.dbf                                             |           100|    30000|    30000
+           95|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio092.dbf                                             |           100|    30000|    30000
+           96|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio093.dbf                                             |           100|    30000|    30000
+           97|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio094.dbf                                             |           100|    30000|    30000
+           98|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio095.dbf                                             |           100|    30000|    30000
+           99|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio096.dbf                                             |           100|    30000|    30000
+          100|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio097.dbf                                             |           100|    30000|    30000
+          101|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio098.dbf                                             |           100|    30000|    30000
+          102|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio099.dbf                                             |           100|    30000|    30000
+          103|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio100.dbf                                             |           100|    30000|    30000
+          104|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco001.dbf                                             |            72|    21700|    30000
+          105|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco002.dbf                                             |            72|    21500|    30000
+          106|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco003.dbf                                             |            73|    21900|    30000
+          107|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco004.dbf                                             |            73|    22000|    30000
+          108|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco005.dbf                                             |            74|    22300|    30000
+          109|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco006.dbf                                             |            74|    22300|    30000
+          110|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco007.dbf                                             |            73|    21800|    30000
+          111|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco008.dbf                                             |            72|    21600|    30000
+          112|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco009.dbf                                             |            72|    21700|    30000
+          113|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco010.dbf                                             |            72|    21600|    30000
+          114|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco011.dbf                                             |            72|    21600|    30000
+          115|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco012.dbf                                             |            72|    21500|    30000
+          116|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco013.dbf                                             |            73|    21900|    30000
+          117|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco014.dbf                                             |            73|    21800|    30000
+          118|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco015.dbf                                             |            73|    21800|    30000
+          119|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco016.dbf                                             |            73|    22000|    30000
+          120|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco017.dbf                                             |            73|    21800|    30000
+          121|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco018.dbf                                             |            73|    21800|    30000
+          122|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco019.dbf                                             |            72|    21500|    30000
+          123|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco020.dbf                                             |            72|    21600|    30000
+          124|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco021.dbf                                             |            71|    21400|    30000
+          125|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco022.dbf                                             |            72|    21600|    30000
+          126|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco023.dbf                                             |            72|    21600|    30000
+          127|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco024.dbf                                             |            72|    21600|    30000
+          128|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco025.dbf                                             |            72|    21500|    30000
+          129|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco026.dbf                                             |            72|    21600|    30000
+          130|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco027.dbf                                             |            72|    21600|    30000
+          131|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco028.dbf                                             |            72|    21600|    30000
+          132|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco029.dbf                                             |            73|    21800|    30000
+          133|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco030.dbf                                             |            73|    21800|    30000
+          134|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco031.dbf                                             |            73|    22000|    30000
+          135|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco032.dbf                                             |            73|    21900|    30000
+          136|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco033.dbf                                             |            73|    21900|    30000
+          137|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco034.dbf                                             |            72|    21700|    30000
+          138|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco035.dbf                                             |            72|    21700|    30000
+          139|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco036.dbf                                             |            72|    21600|    30000
+          140|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco037.dbf                                             |            72|    21500|    30000
+          141|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco038.dbf                                             |            71|    21200|    30000
+          142|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco039.dbf                                             |            70|    20900|    30000
+          143|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco040.dbf                                             |            68|    20400|    30000
+          144|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco041.dbf                                             |            68|    20300|    30000
+          145|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco042.dbf                                             |            68|    20300|    30000
+          146|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco043.dbf                                             |            68|    20300|    30000
+          147|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco044.dbf                                             |            67|    20200|    30000
+          148|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco045.dbf                                             |            68|    20300|    30000
+          149|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco046.dbf                                             |            67|    20200|    30000
+          150|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco047.dbf                                             |            67|    20100|    30000
+          151|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco048.dbf                                             |            67|    20100|    30000
+          152|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco049.dbf                                             |            67|    20200|    30000
+          153|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco050.dbf                                             |            67|    20100|    30000
+          154|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco051.dbf                                             |            67|    20100|    30000
+          155|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco052.dbf                                             |            67|    20100|    30000
+          156|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco053.dbf                                             |            67|    20100|    30000
+          157|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco054.dbf                                             |            67|    20200|    30000
+          158|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco055.dbf                                             |            67|    20200|    30000
+          159|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco056.dbf                                             |            68|    20300|    30000
+          160|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco057.dbf                                             |            67|    20100|    30000
+          161|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco058.dbf                                             |            67|    20000|    30000
+          162|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco059.dbf                                             |            68|    20300|    30000
+          163|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco060.dbf                                             |            68|    20300|    30000
+          164|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco061.dbf                                             |            68|    20400|    30000
+          165|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco062.dbf                                             |            68|    20400|    30000
+          166|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco063.dbf                                             |            68|    20400|    30000
+          167|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco064.dbf                                             |            68|    20500|    30000
+          168|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco065.dbf                                             |            68|    20400|    30000
+          169|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco066.dbf                                             |            68|    20300|    30000
+          170|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco067.dbf                                             |            68|    20400|    30000
+          171|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco068.dbf                                             |            69|    20700|    30000
+          172|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco069.dbf                                             |            68|    20300|    30000
+          173|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco070.dbf                                             |            69|    20600|    30000
+          174|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco071.dbf                                             |            69|    20700|    30000
+          175|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco072.dbf                                             |            70|    20900|    30000
+          176|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco073.dbf                                             |            69|    20800|    30000
+          177|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco074.dbf                                             |            71|    21200|    30000
+          178|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco075.dbf                                             |            71|    21200|    30000
+          179|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco076.dbf                                             |            71|    21200|    30000
+          180|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco077.dbf                                             |            71|    21200|    30000
+          181|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco078.dbf                                             |            70|    21100|    30000
+          182|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco079.dbf                                             |            70|    21100|    30000
+          183|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco080.dbf                                             |            71|    21200|    30000
+          184|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco081.dbf                                             |            71|    21400|    30000
+          185|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco082.dbf                                             |            71|    21300|    30000
+          186|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco083.dbf                                             |            71|    21300|    30000
+          187|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco084.dbf                                             |            70|    21100|    30000
+          188|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco085.dbf                                             |            71|    21300|    30000
+          189|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco086.dbf                                             |            70|    21100|    30000
+          190|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco087.dbf                                             |            71|    21200|    30000
+          191|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco088.dbf                                             |            71|    21200|    30000
+          192|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco089.dbf                                             |            70|    21100|    30000
+          193|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco090.dbf                                             |            71|    21400|    30000
+          194|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco091.dbf                                             |            71|    21200|    30000
+          195|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco092.dbf                                             |            71|    21200|    30000
+          196|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco093.dbf                                             |            70|    21100|    30000
+          197|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco094.dbf                                             |            70|    21100|    30000
+          198|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco095.dbf                                             |            71|    21300|    30000
+          199|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco096.dbf                                             |            71|    21300|    30000
+          200|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco097.dbf                                             |            71|    21200|    30000
+          201|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco098.dbf                                             |            71|    21200|    30000
+          202|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco099.dbf                                             |            72|    21500|    30000
+          203|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco100.dbf                                             |            72|    21600|    30000
+          204|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco001.dbf                                             |            39|    11700|    30000
+          205|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco002.dbf                                             |            40|    11900|    30000
+          206|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco003.dbf                                             |            39|    11600|    30000
+          207|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco004.dbf                                             |            39|    11600|    30000
+          208|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco005.dbf                                             |            39|    11700|    30000
+          209|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco006.dbf                                             |            40|    11900|    30000
+          210|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco007.dbf                                             |            40|    11900|    30000
+          211|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco008.dbf                                             |            39|    11600|    30000
+          212|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco009.dbf                                             |            39|    11600|    30000
+          213|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco010.dbf                                             |            38|    11500|    30000
+          214|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco011.dbf                                             |            38|    11500|    30000
+          215|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco012.dbf                                             |            39|    11800|    30000
+          216|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco013.dbf                                             |            39|    11600|    30000
+          217|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco014.dbf                                             |            37|    11200|    30000
+          218|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco015.dbf                                             |            38|    11300|    30000
+          219|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco016.dbf                                             |            37|    11200|    30000
+          220|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco017.dbf                                             |            38|    11400|    30000
+          221|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco018.dbf                                             |            39|    11600|    30000
+          222|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco019.dbf                                             |            39|    11800|    30000
+          223|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco020.dbf                                             |            40|    11900|    30000
+          224|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco021.dbf                                             |            40|    11900|    30000
+          225|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco022.dbf                                             |            40|    12100|    30000
+          226|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco023.dbf                                             |            40|    12100|    30000
+          227|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco024.dbf                                             |            41|    12200|    30000
+          228|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco025.dbf                                             |            41|    12200|    30000
+          229|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco026.dbf                                             |            40|    12000|    30000
+          230|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco027.dbf                                             |            39|    11700|    30000
+          231|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco028.dbf                                             |            40|    12000|    30000
+          232|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco029.dbf                                             |            40|    11900|    30000
+          233|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco030.dbf                                             |            40|    11900|    30000
+          234|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco031.dbf                                             |            40|    11900|    30000
+          235|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco032.dbf                                             |            40|    11900|    30000
+          236|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco033.dbf                                             |            39|    11800|    30000
+          237|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco034.dbf                                             |            39|    11600|    30000
+          238|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco035.dbf                                             |            40|    12000|    30000
+          239|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco036.dbf                                             |            39|    11800|    30000
+          240|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco037.dbf                                             |            39|    11700|    30000
+          241|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco038.dbf                                             |            39|    11800|    30000
+          242|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco039.dbf                                             |            39|    11600|    30000
+          243|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco040.dbf                                             |            39|    11600|    30000
+          244|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco041.dbf                                             |            38|    11400|    30000
+          245|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco042.dbf                                             |            38|    11400|    30000
+          246|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco043.dbf                                             |            39|    11700|    30000
+          247|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco044.dbf                                             |            39|    11700|    30000
+          248|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco045.dbf                                             |            38|    11500|    30000
+          249|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco046.dbf                                             |            38|    11500|    30000
+          250|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco047.dbf                                             |            38|    11500|    30000
+          251|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco048.dbf                                             |            38|    11500|    30000
+          252|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco049.dbf                                             |            39|    11600|    30000
+          253|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco050.dbf                                             |            39|    11600|    30000
+          254|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice001.dbf                                              |            45|    13522|    30000
+          255|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice002.dbf                                              |            46|    13721|    30000
+          256|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice003.dbf                                              |            45|    13506|    30000
+          257|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice004.dbf                                              |            45|    13644|    30000
+          258|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice005.dbf                                              |            45|    13406|    30000
+          259|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw001.dbf                                           |           100|    30000|    30000
+          260|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw002.dbf                                           |           100|    30000|    30000
+          261|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw003.dbf                                           |           100|    30000|    30000
+          262|ARIUS               |/oracle/oradata/orcl/arius001.dbf                                                    |            54|    16170|    30000
+          263|ARIUS               |/oracle/oradata/orcl/arius002.dbf                                                    |            55|    16426|    30000
+          264|ARIUS               |/oracle/oradata/orcl/arius003.dbf                                                    |            54|    16124|    30000
+          265|INDICES             |/oracle/oradata/orcl/indices001.dbf                                                  |            49|    14791|    30000
+          266|INDICES             |/oracle/oradata/orcl/indices002.dbf                                                  |            50|    14860|    30000
+          267|TSD_SENIOR          |/oracle/oradata/orcl/tsd_senior001.dbf                                               |            83|    25000|    30000
+          268|TSD_SENIOR          |/oracle/oradata/orcl/tsd_senior002.dbf                                               |            83|    24900|    30000
+          269|TSI_SENIOR          |/oracle/oradata/orcl/tsi_senior001.dbf                                               |            20|     5900|    30000
+          270|TSI_SENIOR          |/oracle/oradata/orcl/tsi_senior002.dbf                                               |            21|     6200|    30000
+          271|USERSLOG            |/oracle/oradata/orcl/userslog001.dbf                                                 |            35|    10411|    30000
+          272|USERSLOG            |/oracle/oradata/orcl/userslog002.dbf                                                 |            35|    10429|    30000
+          273|TBS_NDD_CERTIFICADOS|/oracle/oradata/orcl/tbs_ndd_certificados001.dbf                                     |             0|        2|    30000
+          274|USERLOG             |/oracle/oradata/orcl/userlog001.dbf                                                  |             0|        2|    30000
+          275|SIMPLIFICACAO_I     |/oracle/oradata/orcl/simplificacao_i001.dbf                                          |             1|      186|    30000
+          276|SIMPLIFICACAO_D     |/oracle/oradata/orcl/simplificacao_d001.dbf                                          |             2|      465|    30000
+          277|ARQMORTO            |/oracle/oradata/orcl/arqmorto001.dbf                                                 |            50|    15076|    30000
+          278|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw001.dbf                                           |            61|    18200|    30000
+          279|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw002.dbf                                           |            61|    18200|    30000
+          280|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw003.dbf                                           |            61|    18200|    30000
+          281|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw004.dbf                                           |            61|    18300|    30000
+          282|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw005.dbf                                           |            61|    18300|    30000
+          283|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw006.dbf                                           |            61|    18300|    30000
+          284|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw007.dbf                                           |            61|    18400|    30000
+          285|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw008.dbf                                           |            61|    18300|    30000
+          286|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw009.dbf                                           |            61|    18400|    30000
+          287|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw010.dbf                                           |            62|    18500|    30000
+          288|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw011.dbf                                           |            61|    18400|    30000
+          289|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw012.dbf                                           |            61|    18400|    30000
+          290|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw013.dbf                                           |            61|    18400|    30000
+          291|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw014.dbf                                           |            61|    18300|    30000
+          292|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw015.dbf                                           |            61|    18300|    30000
+          293|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw016.dbf                                           |            61|    18300|    30000
+          294|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw017.dbf                                           |            61|    18300|    30000
+          295|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw018.dbf                                           |            61|    18300|    30000
+          296|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw019.dbf                                           |            61|    18300|    30000
+          297|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw020.dbf                                           |            61|    18200|    30000
+          298|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor001.dbf                                      |            68|    20300|    30000
+          299|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor002.dbf                                      |            68|    20400|    30000
+          300|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor003.dbf                                      |            68|    20400|    30000
+          301|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor004.dbf                                      |            68|    20300|    30000
+          302|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor005.dbf                                      |            68|    20400|    30000
+          303|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor001.dbf                                      |            58|    17300|    30000
+          304|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor002.dbf                                      |            58|    17400|    30000
+          305|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor003.dbf                                      |            59|    17600|    30000
+          306|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor004.dbf                                      |            59|    17600|    30000
+          307|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor005.dbf                                      |            59|    17700|    30000
+          308|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor006.dbf                                      |            68|    20500|    30000
+          309|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor007.dbf                                      |            68|    20500|    30000
+          310|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor008.dbf                                      |            67|    20200|    30000
+          311|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor009.dbf                                      |            67|    20200|    30000
+          312|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor010.dbf                                      |            68|    20400|    30000
+          313|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor006.dbf                                      |            59|    17800|    30000
+          314|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor007.dbf                                      |            60|    18000|    30000
+          315|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor008.dbf                                      |            60|    17900|    30000
+          316|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor009.dbf                                      |            60|    18000|    30000
+          317|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor010.dbf                                      |            58|    17400|    30000
+          318|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw005.dbf                                           |            30|     8900|    30000
+          319|UNDO1               |/oracle/oradata/orcl/undo1_04.dbf                                                    |            42|    13500|    32000
+          320|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice006.dbf                                              |             2|      483|    30000
+          321|SENIOR_HML          |/oracle/oradata/orcl/senior_hml01.dbf                                                |            24|     7274|    30000
+          322|SENIOR_HML          |/oracle/oradata/orcl/senior_hml02.dbf                                                |            24|     7209|    30000
+          323|SENIOR_HML          |/oracle/oradata/orcl/senior_hml03.dbf                                                |            25|     7600|    30000
+          324|SENIOR_HML          |/oracle/oradata/orcl/senior_hml04.dbf                                                |            25|     7383|    30000
+          325|SENIOR_HML          |/oracle/oradata/orcl/senior_hml05.dbf                                                |            23|     6954|    30000
+          326|SYSAUX              |/oracle/oradata/orcl/sysaux02.dbf                                                    |            27|     8000|    30000
+          327|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio101.dbf                                             |           100|    30000|    30000
+          328|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio102.dbf                                             |           100|    30000|    30000
+          329|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio103.dbf                                             |           100|    30000|    30000
+          330|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio104.dbf                                             |           100|    30000|    30000
+          331|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio105.dbf                                             |           100|    30000|    30000
+          332|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio106.dbf                                             |           100|    30000|    30000
+          333|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio107.dbf                                             |           100|    30000|    30000
+          334|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio108.dbf                                             |            89|    26700|    30000
+          335|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio109.dbf                                             |            88|    26550|    30000
+          336|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio110.dbf                                             |            66|    21050|    32000
+          337|UNDO1               |/oracle/oradata/orcl/undo1_01.dbf                                                    | 			100|    29500|        0
+          338|UNDO1               |/oracle/oradata/orcl/undo1_02.dbf                                                    | 			100|    30000|        0
+          339|UNDO1               |/oracle/oradata/orcl/undo1_03.dbf                                                    | 			100|    30000|        0
+          340|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio111.dbf                                             |            66|    21000|    32000
+          341|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio112.dbf                                             |            66|    21050|    32000
+          342|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio113.dbf                                             |            45|    14350|    32000
+          343|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio114.dbf                                             |            44|    14100|    32000
+          344|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio115.dbf                                             |            44|    14150|    32000
+          345|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio116.dbf                                             |            29|     9350|    32000
+          346|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio117.dbf                                             |            29|     9350|    32000
+          347|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio118.dbf                                             |            17|     5500|    32000
+          348|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio119.dbf                                             |            17|     5450|    32000
+          349|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio120.dbf                                             |            17|     5400|    32000
+
+
+
+
+
+Tablespace:
+CLESA|_#F|_______USED______ALLOC____MAX_[GRAPH_____<USE]_USABLE|_TableSpace__________
+---M-|  1|     3,105M     8,929M    30G [*         <10%]  26.3G| SYSTEM
+-----|  2|    35,612M    38,000M    59G [*****     <59%]  23.8G| SYSAUX
+U--M-|  4|     1,597M   103,000M   119G [*         < 1%] 117.1G| UNDO1
+tN-MU|  4|     1,646M   120,000M   118G [*         < 1%] 115.6G| TEMP1
+-----|  1|       357M       465M    30G [*         < 1%]  28.9G| SIMPLIFICACAO_D
+-----|  6|    64,615M    68,282M   176G [***       <36%] 112.7G| TSD_VORTICE
+-----|  1|         1M         2M    30G [*         < 0%]  29.3G| USERLOG
+-----|  2|    19,809M    20,840M    59G [***       <33%]  39.2G| USERSLOG
+-----|  1|       177M       186M    30G [*         < 1%]  29.1G| SIMPLIFICACAO_I
+-----|  5|    36,006M    36,419M   147G [**        <24%] 111.3G| SENIOR_HML
+-----|100| 2,009,972M 2,110,500M 2,930G [******    <67%] 966.8G| TSD_CONSINCO
+-----| 50|   557,503M   585,400M 1,465G [***       <37%] 920.4G| TSI_CONSINCO
+-----|120| 3,241,815M 3,404,000M 3,538G [*******#  <90%] 371.3G| TSD_VITRUVIO
+-----|  1|    14,965M    15,076M    30G [****      <50%]  14.7G| ARQMORTO
+-----|  2|    47,502M    49,900M    59G [*******   <79%]  12.2G| TSD_SENIOR
+-----|  2|    11,440M    12,100M    59G [*         <19%]  47.4G| TSI_SENIOR
+-----| 10|   193,817M   203,600M   293G [******    <65%] 103.7G| TSD_CONSINCOMONITOR
+-----| 10|   168,269M   176,700M   293G [*****     <56%] 128.6G| TSI_CONSINCOMONITOR
+-----|  2|    28,154M    29,651M    59G [****      <47%]  31.1G| INDICES
+-----|  1|         1M         2M    30G [*         < 0%]  29.3G| TBS_NDD_CERTIFICADOS
+-----|  3|    46,376M    48,720M    88G [*****     <52%]  42.6G| ARIUS
+-----| 20|   348,770M   366,300M   586G [*****     <58%] 245.3G| TSD_CONSINCODW
+-----|  5|   102,531M   107,700M   147G [******    <68%]  46.4G| TSI_CONSINCODW
+
+
+Tamano Owner:
+________Space_|_Owner___________________
+         0.3M | APPQOSSYS
+    15,953.5M | ARIUS
+        55.3M | ARIUSCONSUMO
+        14.3M | AUDSYS
+        53.1M | BACKUP
+ 2,439,157.9M | CONSINCO
+   451,275.6M | CONSINCODW
+   362,066.0M | CONSINCOMONITOR
+         1.1M | DBM
+         0.4M | DBSFWUSER
+         1.5M | DBSNMP
+         6.8M | GSMADMIN_INTERNAL
+    21,695.2M | INTEGRACAO
+         9.3M | INTEGRAFIS
+        21.7M | NAUTH
+        20.8M | NAUTH_HML
+         0.3M | NDD_CERTIFICADOS
+    41,589.5M | NDD_COLD
+     4,597.8M | NDD_COLD_EXPORT
+    60,138.4M | NDD_CONNECTOR
+       116.9M | NDD_REINF
+         0.9M | OJVMSYS
+         0.6M | OUTLN
+    34,496.8M | PERFSTAT
+    93,277.6M | PROREG
+     9,737.2M | SDE
+     7,519.3M | SDE_HML
+    38,712.3M | SENIOR
+    28,481.8M | SENIOR_HML
+    10,488.4M | SENIOR_TESTE
+       531.6M | SIMPLIFICACAO
+     3,108.2M | SYS
+       960.1M | SYSTEM
+ 2,524,833.1M | VITRUVIO
+   716,849.6M | VITRUVIO_HML
+    64,608.9M | VORTICE
+         7.5M | WMSYS
+        62.9M | XDB
+
+Characterset:
+NAME
+VALUE$
+COMMENT$
+DICT.BASE
+2
+dictionary base tables version #
+DEFAULT_TEMP_TABLESPACE
+TEMP1
+Name of default temporary tablespace
+DEFAULT_PERMANENT_TABLESPACE
+TSD_CONSINCO
+Name of default permanent tablespace
+DEFAULT_EDITION
+ORA$BASE
+Name of the database default edition
+Flashback Timestamp TimeZone
+GMT
+Flashback timestamp created in GMT
+TDE_MASTER_KEY_ID
+
+
+DBTIMEZONE
+America/Sao_Paulo
+DB time zone
+DEFAULT_TBS_TYPE
+SMALLFILE
+Default tablespace type
+DICTIONARY_ENDIAN_TYPE
+LITTLE
+Endian type of the data dictionary
+GLOBAL_DB_NAME
+ORCL
+Global database name
+NLS_RDBMS_VERSION
+19.0.0.0.0
+RDBMS version for NLS parameters
+NLS_NCHAR_CHARACTERSET
+AL16UTF16
+NCHAR Character set
+NLS_NCHAR_CONV_EXCP
+FALSE
+NLS conversion exception
+NLS_LENGTH_SEMANTICS
+BYTE
+NLS length semantics
+NLS_COMP
+BINARY
+NLS comparison
+NLS_DUAL_CURRENCY
+$
+Dual currency symbol
+NLS_TIMESTAMP_TZ_FORMAT
+DD-MON-RR HH.MI.SSXFF AM TZR
+Timestamp with timezone format
+NLS_TIME_TZ_FORMAT
+HH.MI.SSXFF AM TZR
+Time with timezone format
+NLS_TIMESTAMP_FORMAT
+DD-MON-RR HH.MI.SSXFF AM
+Time stamp format
+NLS_TIME_FORMAT
+HH.MI.SSXFF AM
+Time format
+NLS_SORT
+BINARY
+Linguistic definition
+NLS_DATE_LANGUAGE
+AMERICAN
+Date language
+NLS_DATE_FORMAT
+DD-MON-RR
+Date format
+NLS_CALENDAR
+GREGORIAN
+Calendar system
+NLS_CHARACTERSET
+WE8MSWIN1252
+Character set
+NLS_NUMERIC_CHARACTERS
+.,
+Numeric characters
+NLS_ISO_CURRENCY
+AMERICA
+ISO currency
+NLS_CURRENCY
+$
+Local currency
+NLS_TERRITORY
+AMERICA
+Territory
+NLS_LANGUAGE
+AMERICAN
+Language
+DST_SECONDARY_TT_VERSION
+0
+Version of secondary timezone data file
+DST_PRIMARY_TT_VERSION
+42
+Version of primary timezone data file
+DST_UPGRADE_STATE
+NONE
+State of Day Light Saving Time Upgrade
+MAX_STRING_SIZE
+STANDARD
+MAX_STRING_SIZE parameter used for dictionary metadata
+MAX_PDB_SNAPSHOTS
+8
+maximum number of snapshots for a given PDB
+EXPORT_VIEWS_VERSION
+8
+Export views revision #
+WORKLOAD_CAPTURE_MODE
+
+CAPTURE implies workload capture is in progress
+WORKLOAD_REPLAY_MODE
+
+PREPARE implies external replay clients can connect; REPLAY implies workload replay is in progress
+NO_USERID_VERIFIER_SALT
+E406BE36D235A5517AD769316DBFDC59
+
+Statspack:
+INICIO        |FIM           |HOST_CPU_UTIL|      OS_LOAD|PHYSICAL_READ_MBPS|PHYSICAL_WRITE_MBPS|PHYSICAL_READ_IOPS|PHYSICAL_WRITE_IOPS|PHYSICAL_REDO_IOPS|NETWORK_MB_PER_SEC|      SNAP_ID
+03-09-25 00:00|03-09-25 01:00|          9.2|          2.8|              13.2|                1.6|            1300.5|              253.6|              58.3|               4.6|        12315
+03-09-25 01:00|03-09-25 02:00|         10.2|            3|              20.3|                8.6|            1718.5|              347.2|              59.7|               4.5|        12316
+03-09-25 02:00|03-09-25 03:00|          9.6|          2.9|              12.7|                3.5|            1262.2|                372|                65|               4.5|        12317
+03-09-25 03:00|03-09-25 04:00|           10|          3.3|              12.8|                6.1|            1152.1|              298.3|              51.8|               4.4|        12318
+03-09-25 04:00|03-09-25 04:59|          9.7|          3.1|              17.9|               17.5|            1412.9|              423.7|              42.4|               4.3|        12319
+03-09-25 04:59|03-09-25 05:59|          9.4|          3.1|              16.7|               25.5|            1010.7|              636.2|              86.1|               4.7|        12320
+03-09-25 05:59|03-09-25 06:59|          8.9|          2.9|              16.2|                1.7|            1675.2|              270.1|              49.7|               5.2|        12321
+03-09-25 06:59|03-09-25 07:59|         11.9|          3.8|              22.8|               12.8|            1793.6|              571.3|              64.8|               5.7|        12322
+03-09-25 07:59|03-09-25 08:59|         12.3|          3.8|              23.7|                 15|            2100.4|              752.3|             141.5|               5.9|        12323
+03-09-25 08:59|03-09-25 09:59|         14.9|          4.6|              19.3|               22.5|            1367.8|              791.7|             109.2|               6.3|        12324
+03-09-25 09:59|03-09-25 10:59|         12.1|          4.1|              18.7|                5.3|            1794.7|              595.2|             110.2|               6.4|        12325
+03-09-25 10:59|03-09-25 11:59|         11.9|          3.9|              14.3|                6.6|            1299.8|              603.4|             109.1|               6.3|        12326
+03-09-25 11:59|03-09-25 13:00|         11.8|          3.7|               8.8|                4.5|             728.9|              840.6|             179.5|               5.5|        12327
+03-09-25 13:00|03-09-25 14:00|         11.3|          3.5|               8.6|                4.8|             704.4|              468.7|              82.1|               5.6|        12328
+03-09-25 14:00|03-09-25 15:00|         12.9|          4.1|              13.2|                5.7|            1247.7|              547.8|              98.7|                 6|        12329
+03-09-25 15:00|03-09-25 16:00|         12.3|          3.6|              12.3|                5.7|            1030.5|              640.4|             108.4|               5.7|        12330
+03-09-25 16:00|03-09-25 17:00|         12.4|          3.8|               9.4|                  5|             806.8|              549.5|             105.2|               5.8|        12331
+03-09-25 17:00|03-09-25 18:00|         12.2|          4.1|              10.5|                4.5|             941.6|              522.4|             100.6|               5.6|        12332
+03-09-25 18:00|03-09-25 19:00|         10.1|          3.2|                12|                  4|            1156.3|              468.1|              90.3|                 5|        12333
+03-09-25 19:00|03-09-25 20:00|          9.8|          3.1|               8.6|                3.6|             626.7|              419.1|              80.3|               4.7|        12334
+03-09-25 20:00|03-09-25 21:00|          9.8|          3.1|               8.9|                3.7|             793.3|              411.8|              80.2|               4.8|        12335
+03-09-25 21:00|03-09-25 22:00|          7.2|            2|                 7|                2.6|               570|                338|              70.3|               4.6|        12336
+03-09-25 22:00|03-09-25 23:00|          6.6|          1.8|               6.2|                1.8|             499.9|              256.5|              54.3|               4.5|        12337
+03-09-25 23:00|04-09-25 00:00|          8.1|          2.5|              23.8|                9.5|             711.6|              405.2|              63.6|               4.3|        12338
+04-09-25 00:00|04-09-25 01:00|         10.3|          3.5|              15.1|                1.4|            1488.3|              240.9|              54.9|               4.3|        12339
+04-09-25 01:00|04-09-25 02:00|         10.3|          3.4|              17.8|                8.5|            1591.9|              333.9|              53.5|               4.3|        12340
+04-09-25 02:00|04-09-25 03:00|          9.3|          3.1|                12|                2.9|            1232.3|              347.4|              60.7|               4.4|        12341
+04-09-25 03:00|04-09-25 04:00|          9.7|          3.1|              12.5|                  5|            1159.3|              270.8|              47.9|               4.3|        12342
+04-09-25 04:00|04-09-25 05:00|          9.2|          2.8|              16.4|               14.7|            1324.6|              390.7|              39.2|               4.5|        12343
+04-09-25 05:00|04-09-25 06:00|          9.5|          2.8|              19.2|               29.2|            1218.9|              831.7|              83.1|               4.6|        12344
+04-09-25 06:00|04-09-25 07:00|           10|          3.1|              11.9|                1.2|            1183.6|              230.2|              53.9|                 5|        12345
+04-09-25 07:00|04-09-25 08:00|         12.9|          4.2|              20.1|               12.1|            1916.5|              476.8|              61.2|               5.6|        12346
+04-09-25 08:00|04-09-25 09:00|         11.4|          3.7|                16|                3.6|            1316.7|                488|             100.6|               5.6|        12347
+04-09-25 09:00|04-09-25 10:00|           12|          3.9|                10|                  4|             761.8|              501.4|              97.7|               5.9|        12348
+04-09-25 10:00|04-09-25 11:00|         13.4|          4.3|              11.9|                4.9|             909.2|              545.9|             109.5|                 6|        12349
+04-09-25 11:00|04-09-25 12:00|         13.2|          3.9|              11.8|                6.2|            1101.2|              577.4|             103.2|               5.7|        12350
+04-09-25 12:00|04-09-25 13:00|         12.7|          3.8|               8.7|                3.5|             734.1|              760.3|             178.1|               5.1|        12351
+04-09-25 13:00|04-09-25 14:00|           12|          3.9|               9.3|                4.8|             824.5|              525.3|              89.3|               5.8|        12352
+04-09-25 14:00|04-09-25 15:00|         12.7|          4.3|                15|                7.4|            1359.6|              558.8|              88.9|               6.5|        12353
+04-09-25 15:00|04-09-25 16:00|         12.8|            4|              10.1|                4.4|             877.6|              534.5|              97.3|               5.6|        12354
+04-09-25 16:00|04-09-25 16:59|         18.2|          5.9|              33.7|               62.4|            1810.5|             1340.5|             175.7|               5.3|        12355
+04-09-25 16:59|04-09-25 17:59|         17.5|          5.6|              17.7|               14.5|            1322.5|              797.8|             121.9|               5.6|        12356
+04-09-25 17:59|04-09-25 18:59|         12.8|          3.8|              10.3|                4.7|             758.2|              512.4|              92.7|               4.8|        12357
+04-09-25 18:59|04-09-25 19:59|         11.7|          3.4|                 7|                3.4|             551.2|              408.1|              85.2|               4.8|        12358
+04-09-25 19:59|04-09-25 20:59|         10.7|          3.5|                 7|                3.7|             575.6|              429.8|              79.4|               4.4|        12359
+04-09-25 20:59|04-09-25 21:59|            8|          2.6|               6.1|                2.4|             472.8|              351.3|              75.2|               4.4|        12360
+04-09-25 21:59|04-09-25 22:59|          7.1|          2.2|               6.1|                1.8|             496.5|              277.9|              59.7|               4.3|        12361
+04-09-25 22:59|04-09-25 23:59|          8.2|          2.6|               8.7|                  6|             659.2|              473.6|              88.1|               4.2|        12362
+04-09-25 23:59|05-09-25 00:59|          9.6|          3.1|              28.2|               17.5|            1353.3|              358.9|              66.7|               4.5|        12363
+05-09-25 00:59|05-09-25 02:00|         12.5|          3.8|              26.3|               27.7|            1899.1|              557.4|              93.1|               4.1|        12364
+05-09-25 02:00|05-09-25 03:00|         10.1|            3|              12.6|                4.9|            1304.7|              453.1|              68.1|               4.2|        12365
+05-09-25 03:00|05-09-25 04:00|          9.6|          3.2|              11.4|                  2|            1140.8|              253.6|              56.2|               4.1|        12366
+05-09-25 04:00|05-09-25 05:00|          9.8|          3.2|              16.1|               16.9|            1212.2|              474.5|                47|               4.4|        12367
+05-09-25 05:00|05-09-25 06:00|          9.2|          2.9|              17.8|               31.6|             955.2|              808.3|              89.4|               4.3|        12368
+05-09-25 06:00|05-09-25 07:00|         10.1|          3.2|              10.9|                  2|            1088.8|              318.7|              55.8|               4.5|        12369
+05-09-25 07:00|05-09-25 08:00|         12.1|          3.8|              19.3|               12.4|              1853|                507|              66.7|               5.6|        12370
+05-09-25 08:00|05-09-25 09:00|         13.8|          4.2|              31.7|               21.4|            2582.1|              605.1|              95.9|               5.7|        12371
+05-09-25 09:00|05-09-25 10:00|         15.6|          4.7|              28.1|               28.9|            2261.4|              805.2|             118.6|               6.2|        12372
+05-09-25 10:00|05-09-25 11:00|         15.3|            5|              26.9|               31.5|            1659.2|             1012.8|             124.5|               5.9|        12373
+05-09-25 11:00|05-09-25 12:00|         12.9|          4.3|                14|                6.2|            1281.6|              611.7|             118.8|               5.7|        12374
+05-09-25 12:00|05-09-25 13:00|         11.4|          3.8|               8.1|                5.3|               634|                896|             192.5|               5.2|        12375
+05-09-25 13:00|05-09-25 14:00|         11.2|          3.7|              10.6|                4.6|             965.7|              528.6|                94|               5.5|        12376
+05-09-25 14:00|05-09-25 15:00|         12.2|          3.8|                12|                  6|            1051.8|              579.7|             105.2|               5.7|        12377
+05-09-25 15:00|05-09-25 16:00|         13.1|          3.9|                18|                 24|            1202.9|              733.8|             106.6|               5.8|        12378
+05-09-25 16:00|05-09-25 17:00|         13.1|          3.8|              12.2|                6.6|              1065|              625.3|             103.6|               5.3|        12379
+05-09-25 17:00|05-09-25 18:00|         12.4|            4|              16.7|               18.3|            1279.5|              791.7|             113.3|               5.2|        12380
+05-09-25 18:00|05-09-25 19:00|         11.4|          3.7|               8.7|                5.1|             684.3|                558|             108.3|               4.7|        12381
+05-09-25 19:00|05-09-25 20:00|         11.2|          3.7|               7.4|                  5|             560.8|              490.6|              92.9|               4.6|        12382
+05-09-25 20:00|05-09-25 21:00|           10|          3.2|               9.6|                4.6|               857|              464.2|              85.7|               4.8|        12383
+05-09-25 21:00|05-09-25 22:00|          7.3|          2.2|               6.7|                3.5|             511.2|              372.4|                72|               4.6|        12384
+05-09-25 22:00|05-09-25 23:00|          6.5|          1.8|               6.7|                2.1|             542.4|              285.8|              59.4|               4.5|        12385
+05-09-25 23:00|06-09-25 00:00|          7.7|          2.2|               9.4|                6.8|             714.8|              427.9|              74.6|               4.3|        12386
+06-09-25 00:00|06-09-25 01:00|         10.4|          3.6|              75.9|                 14|            7674.2|              323.2|              61.5|               4.4|        12387
+06-09-25 01:00|06-09-25 02:00|         10.3|          3.5|              24.2|                8.6|            1751.1|              343.7|              61.9|               4.5|        12388
+06-09-25 02:00|06-09-25 03:00|          9.5|          3.2|                13|                3.7|            1330.1|              391.5|              69.1|               4.5|        12389
+06-09-25 03:00|06-09-25 04:00|          9.8|          3.1|                12|                5.5|            1070.6|              309.5|              55.1|               4.4|        12390
+06-09-25 04:00|06-09-25 05:00|          9.6|            3|              16.6|               16.3|              1230|              464.4|              46.5|               4.3|        12391
+06-09-25 05:00|06-09-25 05:59|          9.5|          2.7|                19|               35.7|             933.2|              805.7|              87.2|               4.5|        12392
+06-09-25 05:59|06-09-25 06:59|         10.2|          2.9|              11.3|                2.2|            1122.1|              345.3|              50.8|               4.6|        12393
+06-09-25 06:59|06-09-25 07:59|         11.6|          3.9|              16.5|               12.5|              1461|              539.8|              60.7|               5.3|        12394
+06-09-25 07:59|06-09-25 08:59|         10.5|          3.4|              15.1|                3.5|              1239|              425.5|              79.4|               5.1|        12395
+06-09-25 08:59|06-09-25 09:59|         12.1|          3.7|                 8|                4.9|             652.4|              542.3|              92.9|                 5|        12396
+06-09-25 09:59|06-09-25 10:59|         12.4|            4|               8.8|                6.2|             693.3|              600.5|             104.4|               5.1|        12397
+06-09-25 10:59|06-09-25 11:59|           13|            4|               9.5|                7.1|             756.9|              609.1|             100.9|                 5|        12398
+06-09-25 11:59|06-09-25 12:59|         12.9|          3.9|               8.3|                  6|             602.8|              875.5|             185.7|               4.9|        12399
+06-09-25 12:59|06-09-25 14:00|         13.4|          3.9|               7.8|                5.5|               592|              486.8|              87.9|               4.9|        12400
+06-09-25 14:00|06-09-25 15:00|         10.9|          3.6|               7.7|                4.7|             594.2|              499.3|              85.5|               4.8|        12401
+06-09-25 15:00|06-09-25 16:00|         11.2|          3.6|               7.2|                5.2|             533.3|              520.1|              87.3|               4.9|        12402
+06-09-25 16:00|06-09-25 17:00|         11.3|          3.6|               7.8|                5.3|               596|              508.4|              87.9|                 5|        12403
+06-09-25 17:00|06-09-25 18:00|         12.6|          4.1|              10.5|                5.5|             862.4|              546.4|              92.5|               4.9|        12404
+06-09-25 18:00|06-09-25 19:00|         11.2|          3.5|               7.1|                4.5|               529|              474.5|              86.7|               4.8|        12405
+06-09-25 19:00|06-09-25 20:00|         11.6|          3.4|               6.9|                4.2|               512|                462|              87.8|               4.7|        12406
+06-09-25 20:00|06-09-25 21:00|         10.6|          3.1|               7.3|                  4|             556.2|              420.7|              79.7|               4.9|        12407
+06-09-25 21:00|06-09-25 22:00|          7.5|          2.6|               5.1|                  3|             382.1|              319.7|              62.8|               3.4|        12408
+06-09-25 22:00|06-09-25 23:00|          6.1|            2|               2.6|                1.5|             232.7|              183.4|              37.6|               1.1|        12409
+06-09-25 23:00|07-09-25 00:00|          7.3|          2.5|               5.1|                5.5|             380.5|                331|              56.8|                .9|        12410
+07-09-25 00:00|07-09-25 01:00|          9.4|          3.2|              22.9|               14.1|            1170.5|              266.6|                47|                .9|        12411
+07-09-25 01:00|07-09-25 02:00|         10.2|          3.2|              14.5|                8.5|            1286.3|              308.7|              48.5|                .8|        12412
+07-09-25 02:00|07-09-25 03:00|          9.6|          2.8|              12.1|                3.9|            1196.8|              376.6|              63.1|               4.6|        12413
+07-09-25 03:00|07-09-25 04:00|          9.7|          2.7|                12|                5.3|            1066.3|              293.2|              52.1|               4.6|        12414
+07-09-25 04:00|07-09-25 05:00|          9.2|          3.1|              17.5|               15.7|            1409.4|                410|              46.5|               4.6|        12415
+07-09-25 05:00|07-09-25 06:00|          9.4|            3|              20.5|                 41|               975|             1011.5|              86.8|               4.6|        12416
+07-09-25 06:00|07-09-25 07:00|          8.4|          2.7|              11.2|                 .9|            1107.8|              196.8|              46.7|               4.8|        12417
+07-09-25 07:00|07-09-25 08:00|          7.6|          2.6|               9.2|                1.6|             873.1|              262.3|              53.6|               4.8|        12418
+07-09-25 08:00|07-09-25 09:00|          6.6|            2|               7.2|                2.3|             602.2|              331.7|              71.3|               4.7|        12419
+07-09-25 09:00|07-09-25 10:00|          6.9|          1.9|               7.7|                2.9|             634.4|              379.9|              79.2|               4.6|        12420
+07-09-25 10:00|07-09-25 11:00|          7.1|          1.9|               7.1|                  4|             542.4|              461.6|              92.6|               4.7|        12421
+07-09-25 11:00|07-09-25 12:00|          7.5|          2.6|               7.7|                4.7|               573|              488.9|              94.9|               4.8|        12422
+07-09-25 12:00|07-09-25 13:00|          8.2|          2.6|               7.1|                4.7|             526.9|              813.9|             173.9|               4.8|        12423
+07-09-25 13:00|07-09-25 14:00|          9.7|          3.2|             111.8|                3.9|             803.2|              704.1|             153.8|               4.7|        12424
+07-09-25 14:00|07-09-25 15:00|          9.9|          3.2|              63.3|                2.6|             693.5|              326.2|                67|               4.6|        12425
+07-09-25 15:00|07-09-25 16:00|          9.8|          2.9|             351.8|                3.3|             908.2|              403.1|              72.1|               4.7|        12426
+07-09-25 16:00|07-09-25 17:00|          9.9|          2.9|             193.5|                2.9|             780.8|              348.3|              70.9|               4.7|        12427
+07-09-25 17:00|07-09-25 18:00|         10.1|          2.9|             200.5|                3.1|            1066.4|              342.3|              69.1|               4.7|        12428
+07-09-25 18:00|07-09-25 18:59|          9.9|          3.4|              77.9|                2.9|             814.4|              355.5|              71.4|               4.9|        12429
+07-09-25 18:59|07-09-25 19:59|          9.8|          3.2|             154.1|                2.6|            2703.2|              337.5|              73.5|               4.6|        12430
+07-09-25 19:59|07-09-25 20:59|          9.9|          3.2|             159.6|                  3|            3041.6|              317.3|              65.2|               4.6|        12431
+07-09-25 20:59|07-09-25 21:59|         10.3|          3.4|             420.4|                1.2|            4750.4|              225.9|              53.6|               4.6|        12432
+07-09-25 21:59|07-09-25 22:59|         10.5|          3.3|             303.6|                1.1|              2669|              233.8|              54.5|               4.4|        12433
+07-09-25 22:59|07-09-25 23:59|         12.3|          3.8|             240.2|               14.5|            1931.4|              690.4|             122.6|               4.3|        12434
+07-09-25 23:59|08-09-25 00:59|         12.8|          3.9|             225.9|               20.2|            2422.3|              798.3|             170.2|               4.3|        12435
+08-09-25 00:59|08-09-25 01:59|         13.2|          4.5|             207.3|                9.7|            2969.6|              569.7|             114.2|               4.3|        12436
+08-09-25 01:59|08-09-25 03:00|         10.8|          3.6|              92.9|                3.7|            2296.3|              421.3|              85.2|               4.6|        12437
+08-09-25 03:00|08-09-25 04:00|          9.9|          3.3|                14|                6.6|            1306.3|              335.4|              54.5|               4.3|        12438
+08-09-25 04:00|08-09-25 05:00|          9.7|          3.1|              15.8|               16.6|            1180.7|                450|              47.3|               4.3|        12439
+08-09-25 05:00|08-09-25 06:00|         10.9|          3.2|              22.1|               42.3|            1069.3|              872.4|                95|               4.5|        12440
+08-09-25 06:00|08-09-25 07:00|         11.4|          3.4|              11.9|                3.2|              1182|                448|              50.8|                 5|        12441
+08-09-25 07:00|08-09-25 08:00|         13.1|            4|              19.5|               12.2|            1868.6|              503.3|              66.1|               5.5|        12442
+08-09-25 08:00|08-09-25 09:00|         13.6|          4.6|              13.5|                3.5|              1307|              415.2|              90.6|               5.6|        12443
+08-09-25 09:00|08-09-25 10:00|         11.1|          3.6|              13.6|                4.4|             924.4|              511.7|              99.2|               5.8|        12444
+08-09-25 10:00|08-09-25 11:00|         11.8|          3.8|              10.9|                5.9|             968.5|              599.6|             113.9|               6.1|        12445
+08-09-25 11:00|08-09-25 12:00|         12.6|          4.1|              12.5|                5.9|            1174.8|              572.5|             107.7|               6.9|        12446
+08-09-25 12:00|08-09-25 13:00|         11.4|          3.5|               8.3|                4.9|             658.4|              834.6|             181.6|               5.5|        12447
+08-09-25 13:00|08-09-25 14:00|         10.5|          3.1|              12.4|                4.9|             826.5|              516.4|              88.7|               5.6|        12448
+08-09-25 14:00|08-09-25 15:00|           11|          3.2|                11|                5.2|             907.5|              540.7|              94.2|               5.9|        12449
+08-09-25 15:00|08-09-25 16:00|         11.5|          3.8|                18|                6.5|            1712.5|              553.9|              96.7|                 6|        12450
+08-09-25 16:00|08-09-25 17:00|         11.6|          3.8|              11.5|                6.1|             933.9|              604.6|             108.6|               6.1|        12451
+08-09-25 17:00|08-09-25 18:00|         11.3|          3.7|              11.6|                6.3|             941.6|              618.5|               115|               5.8|        12452
+08-09-25 18:00|08-09-25 19:00|         10.1|          3.1|               7.8|                5.1|               598|              548.1|             104.1|               5.1|        12453
+08-09-25 19:00|08-09-25 20:00|          9.8|          2.8|               7.2|                4.5|             536.2|              483.5|              92.5|               4.9|        12454
+08-09-25 20:00|08-09-25 21:00|          9.7|          2.9|               7.1|                4.1|             527.2|              442.4|                85|               4.9|        12455
+08-09-25 21:00|08-09-25 22:00|            7|          2.2|                 7|                3.7|             515.7|              389.2|              70.7|               4.9|        12456
+08-09-25 22:00|08-09-25 23:00|          6.3|          2.2|               6.7|                2.3|             518.2|              277.1|              55.1|               4.8|        12457
+08-09-25 23:00|09-09-25 00:00|          7.4|          2.5|              10.2|                  6|             814.2|              448.3|              84.6|               4.5|        12458
+09-09-25 00:00|09-09-25 01:00|          9.9|          3.4|              67.4|               13.7|            6564.6|              311.3|              58.6|               4.6|        12459
+09-09-25 01:00|09-09-25 02:00|          9.9|          3.2|              20.6|                8.9|            1910.6|                378|              58.4|               4.6|        12460
+09-09-25 02:00|09-09-25 03:00|          9.1|          2.8|              13.4|                3.8|              1353|              370.2|              62.8|               4.6|        12461
+09-09-25 03:00|09-09-25 04:00|          9.4|          2.7|                12|                5.6|            1057.8|              298.2|              53.6|               4.5|        12462
+09-09-25 04:00|09-09-25 05:00|          9.4|          2.9|              21.7|               16.3|            1916.6|              348.6|              44.4|               4.6|        12463
+09-09-25 05:00|09-09-25 06:00|          9.5|          3.1|              18.8|               27.4|            1151.8|              605.7|              86.9|               4.7|        12464
+09-09-25 06:00|09-09-25 07:00|         15.6|          5.2|              20.8|               21.6|            1627.6|              687.6|              53.6|                 5|        12465
+09-09-25 07:00|09-09-25 07:59|         15.6|          5.1|              16.7|               12.7|            1455.1|              508.1|              63.6|               5.9|        12466
+09-09-25 07:59|09-09-25 08:59|         11.7|          3.7|              14.7|                4.2|            1032.1|              461.4|              92.8|               6.2|        12467
+
+Quantidade de usuario e quantidade empresas:
+  QTDEMP|       QTDUSR
+           28|          114
+
+
+Informa  es das notas:
+   NROEMPRESA|DIVISAO        |TIPODIV|QTDE_TOTAL_NF|QTD_NF_ENTRADA| QTD_NF_SAIDA|QTD_NF_TRANSF|       QTD_CF|    QTD_TOTAL
+            1|VAREJO         |VAREJO |        43016|          1051|        41965|          388|            0|        43016
+            2|VAREJO         |VAREJO |        45321|           970|        44351|          278|            0|        45321
+            3|VAREJO         |VAREJO |        40602|           859|        39743|          255|            0|        40602
+            4|VAREJO         |VAREJO |        49317|           880|        48437|          281|            0|        49317
+            5|VAREJO         |VAREJO |        47427|           864|        46563|          270|            0|        47427
+            6|VAREJO         |VAREJO |        77262|          1191|        76071|          370|            0|        77262
+            7|VAREJO         |VAREJO |        64017|           892|        63125|          257|            0|        64017
+            8|VAREJO         |VAREJO |        62864|           943|        61921|          234|            0|        62864
+            9|VAREJO         |VAREJO |         3176|          1171|         2005|         2260|            0|         3176
+           10|VAREJO         |VAREJO |        43967|           871|        43096|          252|            0|        43967
+           11|VAREJO         |VAREJO |        49991|           836|        49155|          241|            0|        49991
+           12|VAREJO         |VAREJO |        39067|           851|        38216|          266|            0|        39067
+           13|VAREJO         |VAREJO |        50973|           975|        49998|          316|            0|        50973
+
+
+################################################BACKUP´S#################################################
+Tipos de Backup: RMAN - dpnoite - dpdia
+
+Tipo: fullbackup
+Diretório:/oracle/backup-orcl-rman
+Tamanho:32 Gb
+Horário de inicio:01:10
+Duração média:55 minutes
+
+
+
+
+###############################################Processadores############################################
+
+CPU_COUNT_CURRENT|CPU_CORE_COUNT_CURRENT|CPU_SOCKET_COUNT_CURRENT
+               32|                    16|                       2
+
+1 row selected.
+
+Elapsed: 00:00:00.00
+09:41:34 OPS$DBMDBA017@orcl>       INST_ID|STAT_NAME                                                       |        VALUE|    OSSTAT_ID|COMMENTS                                                        |CUM|       CON_ID
+            1|NUM_CPUS                                                        |           32|            0|Number of active CPUs                                           |NO |            0
+            1|IDLE_TIME                                                       | 111532968790|            1|Time (centi-secs) that CPUs have been in the idle state         |YES|            0
+            1|BUSY_TIME                                                       |  15714165812|            2|Time (centi-secs) that CPUs have been in the busy state         |YES|            0
+            1|USER_TIME                                                       |  14849887358|            3|Time (centi-secs) spent in user code                            |YES|            0
+            1|SYS_TIME                                                        |    447332923|            4|Time (centi-secs) spent in the kernel                           |YES|            0
+            1|IOWAIT_TIME                                                     |    136082174|            5|Time (centi-secs) spent waiting for IO                          |YES|            0
+            1|NICE_TIME                                                       |    233922951|            6|Time (centi-secs) spend in low-priority user code               |YES|            0
+            1|RSRC_MGR_CPU_WAIT_TIME                                          |      3402195|           14|Time (centi-secs) processes spent in the runnable state waiting |YES|            0
+            1|LOAD                                                            |     3.109375|           15|Number of processes running or waiting on the run queue         |NO |            0
+            1|NUM_CPU_CORES                                                   |           16|           16|Number of CPU cores                                             |NO |            0
+            1|NUM_CPU_SOCKETS                                                 |            2|           17|Number of physical CPU sockets                                  |NO |            0
+            1|PHYSICAL_MEMORY_BYTES                                           | 271796625408|         1008|Physical memory size in bytes                                   |NO |            0
+            1|VM_IN_BYTES                                                     | 286019981312|         1009|Bytes paged in due to virtual memory swapping                   |YES|            0
+            1|VM_OUT_BYTES                                                    | 552000483328|         1010|Bytes paged out due to virtual memory swapping                  |YES|            0
+            1|FREE_MEMORY_BYTES                                               |   1663496192|         1011|Physical free memory in bytes                                   |NO |            0
+            1|INACTIVE_MEMORY_BYTES                                           |  83058102272|         1012|Physical inactive memory in bytes                               |NO |            0
+            1|SWAP_FREE_BYTES                                                 |  17597091840|         1013|Swap free in bytes                                              |NO |            0
+            1|TCP_SEND_SIZE_MIN                                               |     16777216|         2000|TCP Send Buffer Min Size                                        |NO |            0
+            1|TCP_SEND_SIZE_DEFAULT                                           |     16777216|         2001|TCP Send Buffer Default Size                                    |NO |            0
+            1|TCP_SEND_SIZE_MAX                                               |     16777216|         2002|TCP Send Buffer Max Size                                        |NO |            0
+            1|TCP_RECEIVE_SIZE_MIN                                            |     16777216|         2003|TCP Receive Buffer Min Size                                     |NO |            0
+            1|TCP_RECEIVE_SIZE_DEFAULT                                        |     16777216|         2004|TCP Receive Buffer Default Size                                 |NO |            0
+            1|TCP_RECEIVE_SIZE_MAX                                            |     16777216|         2005|TCP Receive Buffer Max Size                                     |NO |            0
+            1|GLOBAL_SEND_SIZE_MAX                                            |     16777216|         2006|Global send size max (net.core.wmem_max)                        |NO |            0
+            1|GLOBAL_RECEIVE_SIZE_MAX                                         |     16777216|         2007|Global receive size max (net.core.rmem_max)                     |NO |            0
+
+25 rows selected.
+
+Elapsed: 00:00:00.00
+09:41:34 OPS$DBMDBA017@orcl> BANNER                                                                          |BANNER_FULL                                                                                                                                                     |BANNER_LEGACY                                                                   |       CON_ID
+Oracle Database 19c Standard Edition 2 Release 19.0.0.0.0 - Production          |Oracle Database 19c Standard Edition 2 Release 19.0.0.0.0 - Production                                                                                          |Oracle Database 19c Standard Edition 2 Release 19.0.0.0.0 - Production          |            0
+                                                                                |Version 19.22.0.0.0                                                                                                                                             |                                                                                |
+
+
