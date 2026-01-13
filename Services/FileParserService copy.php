@@ -15,13 +15,13 @@ class FileParserService
 
         // Lê o arquivo e converte para UTF-8
         $content = file_get_contents($filePath);
-
+        
         // Detecta encoding e converte para UTF-8
         $encoding = mb_detect_encoding($content, ['UTF-8', 'ISO-8859-1', 'Windows-1252', 'ASCII'], true);
         if ($encoding && $encoding !== 'UTF-8') {
             $content = mb_convert_encoding($content, 'UTF-8', $encoding);
         }
-
+        
         $this->fileContent = $content;
         $this->extractSections();
         $this->sections['format'] = pathinfo($filePath, PATHINFO_EXTENSION) ?: 'txt';
@@ -38,20 +38,20 @@ class FileParserService
         // ==========================================
         $posServidor = stripos($content, 'SERVIDOR');
         $posPrimeiroBanco = stripos($content, 'BANCO');
-
+        
         if ($posServidor !== false && $posPrimeiroBanco !== false) {
             // Pula a linha do delimitador
             $start = strpos($content, "\n", $posServidor) + 1;
             $end = $posPrimeiroBanco;
-
+            
             // Volta até encontrar a linha do delimitador BANCO
-            while ($end > 0 && $content[$end - 1] !== '#') {
+            while ($end > 0 && $content[$end-1] !== '#') {
                 $end--;
             }
-            while ($end > 0 && $content[$end - 1] === '#') {
+            while ($end > 0 && $content[$end-1] === '#') {
                 $end--;
             }
-
+            
             $this->sections['servidor'] = trim(substr($content, $start, $end - $start));
         } else {
             $this->sections['servidor'] = '';
@@ -63,38 +63,38 @@ class FileParserService
         $bancos = [];
         $pattern = '/#{30,}BANCO#{30,}/i';
         preg_match_all($pattern, $content, $matches, PREG_OFFSET_CAPTURE);
-
+        
         if (!empty($matches[0])) {
             foreach ($matches[0] as $idx => $match) {
                 $start = $match[1] + strlen($match[0]);
-
+                
                 // Pula para próxima linha
                 $start = strpos($content, "\n", $start) + 1;
-
+                
                 // Encontra fim (próximo BANCO ou BACKUP)
                 $nextMatch = $matches[0][$idx + 1] ?? null;
                 $end = $nextMatch ? $nextMatch[1] : strlen($content);
-
+                
                 // Verifica se tem BACKUP antes
                 $backupPos = stripos($content, 'BACKUP', $start);
                 if ($backupPos !== false && $backupPos < $end) {
                     // Volta até o delimitador
-                    while ($backupPos > 0 && $content[$backupPos - 1] !== '#') {
+                    while ($backupPos > 0 && $content[$backupPos-1] !== '#') {
                         $backupPos--;
                     }
-                    while ($backupPos > 0 && $content[$backupPos - 1] === '#') {
+                    while ($backupPos > 0 && $content[$backupPos-1] === '#') {
                         $backupPos--;
                     }
                     $end = $backupPos;
                 }
-
+                
                 $bancoContent = trim(substr($content, $start, $end - $start));
                 if (!empty($bancoContent) && strlen($bancoContent) > 10) {
                     $bancos[] = $bancoContent;
                 }
             }
         }
-
+        
         $this->sections['banco'] = $bancos;
 
         // ==========================================
@@ -103,37 +103,37 @@ class FileParserService
         $backups = [];
         $pattern = '/#{30,}BACKUP/i';
         preg_match_all($pattern, $content, $matches, PREG_OFFSET_CAPTURE);
-
+        
         if (!empty($matches[0])) {
             foreach ($matches[0] as $idx => $match) {
                 $start = $match[1] + strlen($match[0]);
-
+                
                 // Pula para próxima linha
                 $start = strpos($content, "\n", $start) + 1;
-
+                
                 // Encontra fim
                 $nextMatch = $matches[0][$idx + 1] ?? null;
                 $end = $nextMatch ? $nextMatch[1] : strlen($content);
-
+                
                 // Verifica se tem BANCO antes
                 $bancoPos = stripos($content, 'BANCO', $start);
                 if ($bancoPos !== false && $bancoPos < $end) {
-                    while ($bancoPos > 0 && $content[$bancoPos - 1] !== '#') {
+                    while ($bancoPos > 0 && $content[$bancoPos-1] !== '#') {
                         $bancoPos--;
                     }
-                    while ($bancoPos > 0 && $content[$bancoPos - 1] === '#') {
+                    while ($bancoPos > 0 && $content[$bancoPos-1] === '#') {
                         $bancoPos--;
                     }
                     $end = $bancoPos;
                 }
-
+                
                 $backupContent = trim(substr($content, $start, $end - $start));
                 if (!empty($backupContent) && strlen($backupContent) > 10) {
                     $backups[] = $backupContent;
                 }
             }
         }
-
+        
         $this->sections['backup'] = $backups;
     }
 

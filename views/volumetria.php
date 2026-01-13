@@ -117,7 +117,6 @@
       background: #e2e8f0;
     }
 
-    /* PARTITION CARD */
     .partition-card {
       background: white;
       border-radius: 20px;
@@ -203,7 +202,6 @@
       padding: 35px;
     }
 
-    /* CAPACITY OVERVIEW */
     .capacity-overview {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -241,7 +239,6 @@
       font-weight: 800;
     }
 
-    /* CONSUMPTION DETAILS */
     .consumption-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -299,7 +296,6 @@
       font-weight: 800;
     }
 
-    /* PREDICTION TABLE */
     .prediction-table {
       background: #f8fafc;
       border-radius: 12px;
@@ -350,7 +346,6 @@
       font-size: 16px;
     }
 
-    /* CHART CONTAINER */
     .chart-container {
       background: white;
       border: 2px solid #e2e8f0;
@@ -367,10 +362,9 @@
     }
 
     canvas {
-      max-height: 300px;
+      max-height: 400px;
     }
 
-    /* ALERT BOX */
     .alert {
       padding: 20px 25px;
       border-radius: 12px;
@@ -431,7 +425,6 @@
 
 <body>
   <div class="container">
-    <!-- HEADER -->
     <div class="header">
       <h1>
         <span>📊</span>
@@ -442,9 +435,9 @@
         Análise detalhada por partição com projeções de crescimento e recomendações de expansão
       </p>
       <div class="actions">
-        <a href="index.php?action=process" class="btn btn-secondary" onclick="history.back(); return false;">
+        <button onclick="window.history.back()" class="btn btn-secondary">
           ← Voltar aos Resultados
-        </a>
+        </button>
         <a href="index.php" class="btn btn-secondary">
           🏠 Nova Análise
         </a>
@@ -457,26 +450,24 @@
           <div class="empty-state">
             <div class="empty-state-icon">📊</div>
             <h3>Nenhum dado disponível para análise</h3>
-            <p>Não foi possível processar os dados de volumetria.</p>
+            <p>Não foram encontradas partições com dados relacionados (datafiles, archives ou backups).</p>
           </div>
         </div>
       </div>
     <?php else: ?>
       <?php foreach ($analysis as $mountPoint => $partition): ?>
         <div class="partition-card">
-          <!-- HEADER DA PARTIÇÃO -->
           <div class="partition-header">
             <div class="partition-title">
               <h2><?= htmlspecialchars($mountPoint) ?></h2>
               <span class="partition-type"><?= htmlspecialchars($partition['tipo']) ?></span>
             </div>
-            <span class="criticality-badge criticality-<?= strtolower(str_replace(['Í', 'Ã'], ['i', 'a'], $partition['previsao']['nivel_criticidade'])) ?>">
+            <span class="criticality-badge criticality-<?= strtolower(str_replace(['Í', 'Ã', 'Ç'], ['i', 'a', 'c'], $partition['previsao']['nivel_criticidade'])) ?>">
               <?= htmlspecialchars($partition['previsao']['nivel_criticidade']) ?>
             </span>
           </div>
 
           <div class="partition-body">
-            <!-- ALERTAS -->
             <?php if ($partition['previsao']['nivel_criticidade'] === 'CRÍTICO'): ?>
               <div class="alert alert-critical">
                 <span class="alert-icon">🚨</span>
@@ -502,7 +493,6 @@
               </div>
             <?php endif; ?>
 
-            <!-- CAPACIDADE GERAL -->
             <div class="capacity-overview">
               <div class="capacity-box">
                 <div class="capacity-label">Capacidade Total</div>
@@ -522,7 +512,6 @@
               </div>
             </div>
 
-            <!-- CONSUMO DETALHADO -->
             <h3 style="margin-bottom: 20px; color: #1a202c;">💾 Consumo Detalhado por Tipo</h3>
             <div class="consumption-grid">
               <div class="consumption-item">
@@ -555,7 +544,6 @@
               </div>
             </div>
 
-            <!-- CRESCIMENTO -->
             <div class="alert alert-info">
               <span class="alert-icon">📈</span>
               <div>
@@ -565,17 +553,17 @@
               </div>
             </div>
 
-            <!-- TABELA DE EXPANSÃO -->
             <div class="prediction-table">
-              <h3>🎯 Recomendações de Expansão (80% de margem livre)</h3>
+              <h3>🎯 Recomendações de Expansão </h3>
               <table class="table">
                 <thead>
                   <tr>
                     <th>Período</th>
-                    <th>Crescimento Previsto</th>
-                    <th>Espaço Necessário</th>
-                    <th>Capacidade Ideal</th>
-                    <th>Expansão Necessária</th>
+                    <th>Crescimento</th>
+                    <th>Usado Futuro</th>
+                    <th>Total Necessário</th>
+                    <th>Expansão</th>
+                    <th>% Livre Final</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -583,19 +571,19 @@
                     <tr>
                       <td><strong><?= $meses ?> meses</strong></td>
                       <td><?= number_format($exp['crescimento_previsto_gb'], 2, ',', '.') ?> GB</td>
-                      <td><?= number_format($exp['espaco_necessario_gb'], 2, ',', '.') ?> GB</td>
-                      <td class="highlight-value"><?= number_format($exp['total_ideal_gb'], 2, ',', '.') ?> GB</td>
+                      <td><?= number_format($exp['usado_futuro_gb'], 2, ',', '.') ?> GB</td>
+                      <td class="highlight-value"><?= number_format($exp['total_necessario_gb'], 2, ',', '.') ?> GB</td>
                       <td><strong><?= number_format($exp['expansao_necessaria_gb'], 2, ',', '.') ?> GB</strong></td>
+                      <td><?= number_format($exp['percentual_livre_final'], 1, ',', '.') ?>%</td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
 
-            <!-- GRÁFICO DE EVOLUÇÃO -->
             <?php if (!empty($partition['evolucao_crescimento'])): ?>
               <div class="chart-container">
-                <h3>📊 Evolução de Crescimento Projetado</h3>
+                <h3>📊 Projeção de Crescimento (36 meses)</h3>
                 <canvas id="chart-<?= md5($mountPoint) ?>"></canvas>
               </div>
 
@@ -606,21 +594,73 @@
                   data: {
                     labels: <?= json_encode(array_column($partition['evolucao_crescimento'], 'mes')) ?>,
                     datasets: [{
-                      label: 'Crescimento Projetado (GB)',
-                      data: <?= json_encode(array_column($partition['evolucao_crescimento'], 'tamanho_gb')) ?>,
-                      borderColor: '#10b981',
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      borderWidth: 3,
-                      tension: 0.4,
-                      fill: true
-                    }]
+                        label: 'Usado Projetado',
+                        data: <?= json_encode(array_column($partition['evolucao_crescimento'], 'usado_gb')) ?>,
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#ef4444'
+                      },
+                      {
+                        label: 'Capacidade Atual',
+                        data: <?= json_encode(array_column($partition['evolucao_crescimento'], 'capacidade_atual_gb')) ?>,
+                        borderColor: '#f59e0b',
+                        borderWidth: 3,
+                        borderDash: [10, 5],
+                        fill: false,
+                        pointRadius: 0
+                      },
+                      {
+                        label: 'Capacidade Necessária (~900GB livre)',
+                        data: <?= json_encode(array_column($partition['evolucao_crescimento'], 'necessario_gb')) ?>,
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#10b981'
+                      }
+                    ]
                   },
                   options: {
                     responsive: true,
                     maintainAspectRatio: true,
+                    interaction: {
+                      mode: 'index',
+                      intersect: false
+                    },
                     plugins: {
                       legend: {
-                        display: false
+                        display: true,
+                        position: 'top',
+                        labels: {
+                          usePointStyle: true,
+                          padding: 15,
+                          font: {
+                            size: 12,
+                            weight: 'bold'
+                          }
+                        }
+                      },
+                      tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        titleFont: {
+                          size: 14,
+                          weight: 'bold'
+                        },
+                        bodyFont: {
+                          size: 13
+                        },
+                        callbacks: {
+                          label: function(context) {
+                            return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' GB';
+                          }
+                        }
                       }
                     },
                     scales: {
@@ -628,8 +668,24 @@
                         beginAtZero: true,
                         ticks: {
                           callback: function(value) {
-                            return value + ' GB';
+                            return value.toFixed(0) + ' GB';
+                          },
+                          font: {
+                            size: 11
                           }
+                        },
+                        grid: {
+                          color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                      },
+                      x: {
+                        ticks: {
+                          font: {
+                            size: 11
+                          }
+                        },
+                        grid: {
+                          display: false
                         }
                       }
                     }

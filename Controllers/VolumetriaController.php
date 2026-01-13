@@ -96,22 +96,20 @@ class VolumetriaController
         require BASE_PATH . '/views/results.php';
     }
 
-    /**
-     * NOVO MÉTODO: Exibe estudo de volumetria
-     */
     public function showVolumetryStudy(array $result): void
     {
         try {
-            // Executa análise de volumetria
             $volumetriaAnalysis = $this->volumetriaAnalyzer->analyzeVolumetry(
                 $result['servidor'] ?? [],
                 $result['banco'] ?? [],
                 $result['backup'] ?? []
             );
 
-            // Passa dados para a view
             $analysis = $volumetriaAnalysis;
             $originalResult = $result;
+
+            // Passa o percentual de margem livre para a view (corrige o erro de constante indefinida)
+            $margemLivrePercentual = \Services\VolumetriaAnalyzer::MARGEM_LIVRE_PERCENTUAL;
 
             require BASE_PATH . '/views/volumetria.php';
         } catch (\Exception $e) {
@@ -277,7 +275,7 @@ class VolumetriaController
         $txt .= str_repeat('=', 100) . "\n";
         $txt .= "                    Relatório gerado por CQLE Softwares v2.0 PRO\n";
         $txt .= "                         Desenvolvido por: Marciano Silva\n";
-        $txt .= "                              www.cqlesoftwares.com.br\n";
+        $txt .= "                                  www.cqle.com.br\n";
         $txt .= str_repeat('=', 100) . "\n";
 
         return $txt;

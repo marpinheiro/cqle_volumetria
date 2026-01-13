@@ -1,0 +1,917 @@
+############################################SERVIDOR#####################################################
+Hostname: dbsrv02.gricki.local
+IP: XXX.XXX.XXX.XX
+S.O: Red Hat Enterprise Linux Server release 7.6 (Maipo)
+Versão Banco:Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+Fabricante:Dell Inc.
+Modelo:PowerEdge R660
+Service Tag:5KDRF14
+Qtd. Proc:2
+Modelo. Proc:Intel(R) Xeon(R) Gold 6434
+Multi-Processamento:32
+Memória:253 Gb
+
+
+Filesystem                 Type  Size  Used Avail Use% Mounted on
+/dev/mapper/system-root    ext4   25G  4.9G   19G  22% 	/var
+/dev/sda2                  ext4  488M  309M  143M  69% 	/teste
+/dev/mapper/system-tmp     ext4  9.8G  9.4M  9.3G   1% 	/u02
+/dev/mapper/system-var     ext4  9.8G  741M  8.6G   8% 	/system
+/dev/mapper/system-var_log ext4   20G  128M   19G   1% 	/log
+/dev/sda1                  vfat  128M  6.4M  122M   5% 	/bot
+/dev/mapper/data-oracle    ext4  8.6T  7.87T  705G  92% 	/oracle
+/dev/mapper/data-base      ext4  8.6T  7.87T  705G  92% 	/u01
+
+
+##########################################BANCO##########################################################
+Nome Instância:orcl
+Tipo: Produção
+Tamanho Banco Físico:
+Database Size       |Used space          |Free space
+7349 GB             |6908 GB             |441 GB
+
+Tamanho Banco Lógico:
+_________Size_|_Type__________
+   1,964,811M | INDEX
+           0M | INDEX PARTITION
+           3M | LOB PARTITION
+         227M | LOBINDEX
+     276,027M | LOBSEGMENT
+           0M | NESTED TABLE
+   4,685,178M | TABLE
+          11M | TABLE PARTITION
+--------------|----------------
+     6,763.9G | Total
+
+
+Crescimento da base:
+
+Date___|TotalUsage|MonthGrown|Percentage
+May2024|  3,766.5G| -234,916M|    106.5%
+Jun2024|  3,537.1G| +137,490M|    100.0%
+Jul2024|  3,671.4G| +170,377M|    103.8%
+Aug2024|  3,837.8G| +226,953M|    108.5%
+Sep2024|  4,059.4G| +258,005M|    114.8%
+Oct2024|  4,311.4G| +300,375M|    121.9%
+Nov2024|  4,604.7G| +412,445M|    130.2%
+Dec2024|  5,007.5G| +264,518M|    141.6%
+Jan2025|  5,265.8G|  +74,344M|    148.9%
+Feb2025|  5,338.4G| +228,541M|    150.9%
+Mar2025|  5,561.6G| +281,090M|    157.2%
+Apr2025|  5,836.1G| +304,007M|    165.0%
+May2025|  6,133.0G| +349,446M|    173.4%
+Jun2025|  6,474.2G| +315,464M|    183.0%
+Jul2025|  6,782.3G| +297,708M|    191.7%
+Aug2025|  7,073.0G| +179,176M|    200.0%
+Sep2025|  7,248.0G|       +0M|    204.9%
+
+Geração de archives:
+HH = [   01Sep |   02Sep |   03Sep |   04Sep |   05Sep |   06Sep |   07Sep |   08Sep |  09Sep ]
+-- = [---------|---------|---------|---------|---------|---------|---------|---------|--------]
+00 = [   4,569M|   2,110M|   1,980M|   1,780M|   2,074M|   2,374M|   2,160M|   3,039M|  2,389M]
+01 = [  12,259M|   6,919M|   6,760M|   6,635M|  26,284M|   6,728M|   6,715M|   6,842M|  6,795M]
+02 = [   7,056M|   3,006M|   2,891M|   2,390M|   2,348M|   3,157M|   3,214M|   3,508M|  3,290M]
+03 = [   9,922M|   4,755M|   5,271M|   3,982M|   1,805M|   4,661M|   4,481M|   5,589M|  4,749M]
+04 = [  16,344M|  17,075M|  16,758M|  14,811M|  16,507M|  16,046M|  15,882M|  16,299M| 16,077M]
+05 = [  16,937M|  19,782M|  23,686M|  26,613M|  30,038M|  33,814M|  38,135M|  41,760M| 26,601M]
+06 = [   1,878M|   1,907M|   1,856M|   1,838M|   1,851M|   1,753M|   1,030M|   1,838M| 20,469M]
+07 = [   9,987M|  10,052M|   9,943M|   9,803M|   9,910M|   9,962M|   1,290M|   9,739M| 10,019M]
+08 = [   3,762M|   2,911M|  14,863M|   2,763M|  20,888M|   2,667M|   2,023M|   3,181M|  3,430M]
+09 = [   3,623M|   3,879M|  18,496M|   3,137M|  27,277M|   3,921M|   2,599M|   3,483M|  2,137M]
+10 = [   5,211M|   5,157M|   4,250M|   4,272M|  28,364M|   4,887M|   3,666M|   4,805M|        ]
+11 = [   4,959M|   5,248M|   5,184M|   4,611M|   5,049M|   5,545M|   4,162M|   4,682M|        ]
+12 = [   4,570M|   3,986M|   3,539M|   3,197M|   4,516M|   4,937M|   3,900M|   4,093M|        ]
+13 = [   3,637M|   3,914M|   3,823M|   3,451M|   3,343M|   4,498M|   3,253M|   3,574M|        ]
+14 = [   5,212M|   4,284M|   4,681M|   5,436M|   4,840M|   3,661M|   2,256M|   3,921M|        ]
+15 = [   5,321M|   5,493M|   3,878M|   3,266M|  23,046M|   4,043M|   2,424M|   5,103M|        ]
+16 = [   5,381M|   6,178M|   4,271M|  58,143M|   4,761M|   4,291M|   2,533M|   4,689M|        ]
+17 = [   5,100M|   4,618M|   3,577M|  11,079M|  15,080M|   4,375M|   2,505M|   5,140M|        ]
+18 = [   4,515M|   4,099M|   3,412M|   3,437M|   4,539M|   3,749M|   2,532M|   4,396M|        ]
+19 = [   3,747M|   3,570M|   2,885M|   3,103M|   4,259M|   3,537M|   2,317M|   3,630M|        ]
+20 = [   3,890M|   3,561M|   3,121M|   2,780M|   3,826M|   3,356M|   2,337M|   3,551M|        ]
+21 = [   3,278M|   3,113M|   2,228M|   2,083M|   2,944M|   2,546M|   1,153M|   3,060M|        ]
+22 = [   2,053M|   1,766M|   1,453M|   1,440M|   1,701M|   1,179M|   1,849M|   1,750M|        ]
+23 = [   5,811M|   5,362M|   7,488M|   5,719M|   6,329M|   5,091M|  12,971M|   5,617M|        ]
+-- = [---------|---------|---------|---------|---------|---------|---------|---------|--------]
+DD = [ 149,025M| 132,744M| 156,295M| 185,770M| 251,580M| 140,778M| 125,389M| 153,289M| 95,955M]
+
+
+Local dos archives:
+/oracle/archive/orcl/
+
+Local físico dos datafiles e tamanho:
+		  FID|TBS                 |FN                                                                                   |           PCT|  MB_USED|   MB_MAX
+            1|SYSTEM              |/u01/oradata/orcl/system01.dbf                                                    |            30|     8929|    30000
+            2|SYSAUX              |/oracle/oradata/orcl/sysaux01.dbf                                                    |           100|    30000|    30000
+            3|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw004.dbf                                           |            29|     8800|    30000
+            4|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio001.dbf                                             |           100|    30000|    30000
+            5|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio002.dbf                                             |           100|    30000|    30000
+            6|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio003.dbf                                             |           100|    30000|    30000
+            7|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio004.dbf                                             |           100|    30000|    30000
+            8|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio005.dbf                                             |           100|    30000|    30000
+            9|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio006.dbf                                             |           100|    30000|    30000
+           10|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio007.dbf                                             |           100|    30000|    30000
+           11|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio008.dbf                                             |           100|    30000|    30000
+           12|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio009.dbf                                             |           100|    30000|    30000
+           13|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio010.dbf                                             |           100|    30000|    30000
+           14|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio011.dbf                                             |           100|    30000|    30000
+           15|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio012.dbf                                             |           100|    30000|    30000
+           16|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio013.dbf                                             |           100|    30000|    30000
+           17|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio014.dbf                                             |           100|    30000|    30000
+           18|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio015.dbf                                             |           100|    30000|    30000
+           19|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio016.dbf                                             |           100|    30000|    30000
+           20|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio017.dbf                                             |           100|    30000|    30000
+           21|TEMP1               |/oracle/oradata/orcl/temp1_01.dbf                                                    | 			100|    30000|        0
+           21|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio018.dbf                                             |           100|    30000|    30000
+           22|TEMP1               |/oracle/oradata/orcl/temp1_02.dbf                                                    | 			100|    30000|        0
+           22|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio019.dbf                                             |           100|    30000|    30000
+           23|TEMP1               |/oracle/oradata/orcl/temp1_03.dbf                                                    | 			100|    30000|        0
+           23|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio020.dbf                                             |           100|    30000|    30000
+           24|TEMP1               |/oracle/oradata/orcl/temp1_04.dbf                                                    | 			100|    30000|        0
+           24|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio021.dbf                                             |           100|    30000|    30000
+           25|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio022.dbf                                             |           100|    30000|    30000
+           26|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio023.dbf                                             |           100|    30000|    30000
+           27|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio024.dbf                                             |           100|    30000|    30000
+           28|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio025.dbf                                             |           100|    30000|    30000
+           29|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio026.dbf                                             |           100|    30000|    30000
+           30|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio027.dbf                                             |           100|    30000|    30000
+           31|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio028.dbf                                             |           100|    30000|    30000
+           32|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio029.dbf                                             |           100|    30000|    30000
+           33|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio030.dbf                                             |           100|    30000|    30000
+           34|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio031.dbf                                             |           100|    30000|    30000
+           35|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio032.dbf                                             |           100|    30000|    30000
+           36|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio033.dbf                                             |           100|    30000|    30000
+           37|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio034.dbf                                             |           100|    30000|    30000
+           38|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio035.dbf                                             |           100|    30000|    30000
+           39|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio036.dbf                                             |           100|    30000|    30000
+           40|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio037.dbf                                             |           100|    30000|    30000
+           41|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio038.dbf                                             |           100|    30000|    30000
+           42|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio039.dbf                                             |           100|    30000|    30000
+           43|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio040.dbf                                             |           100|    30000|    30000
+           44|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio041.dbf                                             |           100|    30000|    30000
+           45|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio042.dbf                                             |           100|    30000|    30000
+           46|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio043.dbf                                             |           100|    30000|    30000
+           47|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio044.dbf                                             |           100|    30000|    30000
+           48|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio045.dbf                                             |           100|    30000|    30000
+           49|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio046.dbf                                             |           100|    30000|    30000
+           50|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio047.dbf                                             |           100|    30000|    30000
+           51|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio048.dbf                                             |           100|    30000|    30000
+           52|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio049.dbf                                             |           100|    30000|    30000
+           53|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio050.dbf                                             |           100|    30000|    30000
+           54|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio051.dbf                                             |           100|    30000|    30000
+           55|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio052.dbf                                             |           100|    30000|    30000
+           56|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio053.dbf                                             |           100|    30000|    30000
+           57|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio054.dbf                                             |           100|    30000|    30000
+           58|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio055.dbf                                             |           100|    30000|    30000
+           59|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio056.dbf                                             |           100|    30000|    30000
+           60|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio057.dbf                                             |           100|    30000|    30000
+           61|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio058.dbf                                             |           100|    30000|    30000
+           62|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio059.dbf                                             |           100|    30000|    30000
+           63|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio060.dbf                                             |           100|    30000|    30000
+           64|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio061.dbf                                             |           100|    30000|    30000
+           65|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio062.dbf                                             |           100|    30000|    30000
+           66|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio063.dbf                                             |           100|    30000|    30000
+           67|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio064.dbf                                             |           100|    30000|    30000
+           68|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio065.dbf                                             |           100|    30000|    30000
+           69|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio066.dbf                                             |           100|    30000|    30000
+           70|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio067.dbf                                             |           100|    30000|    30000
+           71|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio068.dbf                                             |           100|    30000|    30000
+           72|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio069.dbf                                             |           100|    30000|    30000
+           73|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio070.dbf                                             |           100|    30000|    30000
+           74|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio071.dbf                                             |           100|    30000|    30000
+           75|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio072.dbf                                             |           100|    30000|    30000
+           76|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio073.dbf                                             |           100|    30000|    30000
+           77|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio074.dbf                                             |           100|    30000|    30000
+           78|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio075.dbf                                             |           100|    30000|    30000
+           79|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio076.dbf                                             |           100|    30000|    30000
+           80|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio077.dbf                                             |           100|    30000|    30000
+           81|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio078.dbf                                             |           100|    30000|    30000
+           82|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio079.dbf                                             |           100|    30000|    30000
+           83|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio080.dbf                                             |           100|    30000|    30000
+           84|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio081.dbf                                             |           100|    30000|    30000
+           85|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio082.dbf                                             |           100|    30000|    30000
+           86|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio083.dbf                                             |           100|    30000|    30000
+           87|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio084.dbf                                             |           100|    30000|    30000
+           88|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio085.dbf                                             |           100|    30000|    30000
+           89|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio086.dbf                                             |           100|    30000|    30000
+           90|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio087.dbf                                             |           100|    30000|    30000
+           91|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio088.dbf                                             |           100|    30000|    30000
+           92|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio089.dbf                                             |           100|    30000|    30000
+           93|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio090.dbf                                             |           100|    30000|    30000
+           94|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio091.dbf                                             |           100|    30000|    30000
+           95|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio092.dbf                                             |           100|    30000|    30000
+           96|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio093.dbf                                             |           100|    30000|    30000
+           97|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio094.dbf                                             |           100|    30000|    30000
+           98|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio095.dbf                                             |           100|    30000|    30000
+           99|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio096.dbf                                             |           100|    30000|    30000
+          100|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio097.dbf                                             |           100|    30000|    30000
+          101|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio098.dbf                                             |           100|    30000|    30000
+          102|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio099.dbf                                             |           100|    30000|    30000
+          103|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio100.dbf                                             |           100|    30000|    30000
+          104|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco001.dbf                                             |            72|    21700|    30000
+          105|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco002.dbf                                             |            72|    21500|    30000
+          106|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco003.dbf                                             |            73|    21900|    30000
+          107|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco004.dbf                                             |            73|    22000|    30000
+          108|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco005.dbf                                             |            74|    22300|    30000
+          109|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco006.dbf                                             |            74|    22300|    30000
+          110|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco007.dbf                                             |            73|    21800|    30000
+          111|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco008.dbf                                             |            72|    21600|    30000
+          112|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco009.dbf                                             |            72|    21700|    30000
+          113|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco010.dbf                                             |            72|    21600|    30000
+          114|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco011.dbf                                             |            72|    21600|    30000
+          115|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco012.dbf                                             |            72|    21500|    30000
+          116|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco013.dbf                                             |            73|    21900|    30000
+          117|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco014.dbf                                             |            73|    21800|    30000
+          118|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco015.dbf                                             |            73|    21800|    30000
+          119|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco016.dbf                                             |            73|    22000|    30000
+          120|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco017.dbf                                             |            73|    21800|    30000
+          121|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco018.dbf                                             |            73|    21800|    30000
+          122|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco019.dbf                                             |            72|    21500|    30000
+          123|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco020.dbf                                             |            72|    21600|    30000
+          124|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco021.dbf                                             |            71|    21400|    30000
+          125|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco022.dbf                                             |            72|    21600|    30000
+          126|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco023.dbf                                             |            72|    21600|    30000
+          127|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco024.dbf                                             |            72|    21600|    30000
+          128|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco025.dbf                                             |            72|    21500|    30000
+          129|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco026.dbf                                             |            72|    21600|    30000
+          130|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco027.dbf                                             |            72|    21600|    30000
+          131|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco028.dbf                                             |            72|    21600|    30000
+          132|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco029.dbf                                             |            73|    21800|    30000
+          133|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco030.dbf                                             |            73|    21800|    30000
+          134|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco031.dbf                                             |            73|    22000|    30000
+          135|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco032.dbf                                             |            73|    21900|    30000
+          136|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco033.dbf                                             |            73|    21900|    30000
+          137|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco034.dbf                                             |            72|    21700|    30000
+          138|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco035.dbf                                             |            72|    21700|    30000
+          139|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco036.dbf                                             |            72|    21600|    30000
+          140|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco037.dbf                                             |            72|    21500|    30000
+          141|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco038.dbf                                             |            71|    21200|    30000
+          142|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco039.dbf                                             |            70|    20900|    30000
+          143|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco040.dbf                                             |            68|    20400|    30000
+          144|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco041.dbf                                             |            68|    20300|    30000
+          145|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco042.dbf                                             |            68|    20300|    30000
+          146|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco043.dbf                                             |            68|    20300|    30000
+          147|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco044.dbf                                             |            67|    20200|    30000
+          148|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco045.dbf                                             |            68|    20300|    30000
+          149|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco046.dbf                                             |            67|    20200|    30000
+          150|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco047.dbf                                             |            67|    20100|    30000
+          151|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco048.dbf                                             |            67|    20100|    30000
+          152|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco049.dbf                                             |            67|    20200|    30000
+          153|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco050.dbf                                             |            67|    20100|    30000
+          154|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco051.dbf                                             |            67|    20100|    30000
+          155|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco052.dbf                                             |            67|    20100|    30000
+          156|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco053.dbf                                             |            67|    20100|    30000
+          157|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco054.dbf                                             |            67|    20200|    30000
+          158|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco055.dbf                                             |            67|    20200|    30000
+          159|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco056.dbf                                             |            68|    20300|    30000
+          160|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco057.dbf                                             |            67|    20100|    30000
+          161|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco058.dbf                                             |            67|    20000|    30000
+          162|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco059.dbf                                             |            68|    20300|    30000
+          163|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco060.dbf                                             |            68|    20300|    30000
+          164|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco061.dbf                                             |            68|    20400|    30000
+          165|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco062.dbf                                             |            68|    20400|    30000
+          166|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco063.dbf                                             |            68|    20400|    30000
+          167|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco064.dbf                                             |            68|    20500|    30000
+          168|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco065.dbf                                             |            68|    20400|    30000
+          169|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco066.dbf                                             |            68|    20300|    30000
+          170|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco067.dbf                                             |            68|    20400|    30000
+          171|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco068.dbf                                             |            69|    20700|    30000
+          172|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco069.dbf                                             |            68|    20300|    30000
+          173|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco070.dbf                                             |            69|    20600|    30000
+          174|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco071.dbf                                             |            69|    20700|    30000
+          175|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco072.dbf                                             |            70|    20900|    30000
+          176|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco073.dbf                                             |            69|    20800|    30000
+          177|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco074.dbf                                             |            71|    21200|    30000
+          178|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco075.dbf                                             |            71|    21200|    30000
+          179|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco076.dbf                                             |            71|    21200|    30000
+          180|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco077.dbf                                             |            71|    21200|    30000
+          181|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco078.dbf                                             |            70|    21100|    30000
+          182|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco079.dbf                                             |            70|    21100|    30000
+          183|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco080.dbf                                             |            71|    21200|    30000
+          184|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco081.dbf                                             |            71|    21400|    30000
+          185|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco082.dbf                                             |            71|    21300|    30000
+          186|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco083.dbf                                             |            71|    21300|    30000
+          187|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco084.dbf                                             |            70|    21100|    30000
+          188|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco085.dbf                                             |            71|    21300|    30000
+          189|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco086.dbf                                             |            70|    21100|    30000
+          190|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco087.dbf                                             |            71|    21200|    30000
+          191|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco088.dbf                                             |            71|    21200|    30000
+          192|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco089.dbf                                             |            70|    21100|    30000
+          193|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco090.dbf                                             |            71|    21400|    30000
+          194|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco091.dbf                                             |            71|    21200|    30000
+          195|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco092.dbf                                             |            71|    21200|    30000
+          196|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco093.dbf                                             |            70|    21100|    30000
+          197|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco094.dbf                                             |            70|    21100|    30000
+          198|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco095.dbf                                             |            71|    21300|    30000
+          199|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco096.dbf                                             |            71|    21300|    30000
+          200|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco097.dbf                                             |            71|    21200|    30000
+          201|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco098.dbf                                             |            71|    21200|    30000
+          202|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco099.dbf                                             |            72|    21500|    30000
+          203|TSD_CONSINCO        |/oracle/oradata/orcl/tsd_consinco100.dbf                                             |            72|    21600|    30000
+          204|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco001.dbf                                             |            39|    11700|    30000
+          205|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco002.dbf                                             |            40|    11900|    30000
+          206|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco003.dbf                                             |            39|    11600|    30000
+          207|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco004.dbf                                             |            39|    11600|    30000
+          208|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco005.dbf                                             |            39|    11700|    30000
+          209|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco006.dbf                                             |            40|    11900|    30000
+          210|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco007.dbf                                             |            40|    11900|    30000
+          211|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco008.dbf                                             |            39|    11600|    30000
+          212|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco009.dbf                                             |            39|    11600|    30000
+          213|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco010.dbf                                             |            38|    11500|    30000
+          214|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco011.dbf                                             |            38|    11500|    30000
+          215|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco012.dbf                                             |            39|    11800|    30000
+          216|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco013.dbf                                             |            39|    11600|    30000
+          217|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco014.dbf                                             |            37|    11200|    30000
+          218|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco015.dbf                                             |            38|    11300|    30000
+          219|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco016.dbf                                             |            37|    11200|    30000
+          220|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco017.dbf                                             |            38|    11400|    30000
+          221|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco018.dbf                                             |            39|    11600|    30000
+          222|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco019.dbf                                             |            39|    11800|    30000
+          223|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco020.dbf                                             |            40|    11900|    30000
+          224|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco021.dbf                                             |            40|    11900|    30000
+          225|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco022.dbf                                             |            40|    12100|    30000
+          226|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco023.dbf                                             |            40|    12100|    30000
+          227|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco024.dbf                                             |            41|    12200|    30000
+          228|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco025.dbf                                             |            41|    12200|    30000
+          229|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco026.dbf                                             |            40|    12000|    30000
+          230|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco027.dbf                                             |            39|    11700|    30000
+          231|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco028.dbf                                             |            40|    12000|    30000
+          232|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco029.dbf                                             |            40|    11900|    30000
+          233|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco030.dbf                                             |            40|    11900|    30000
+          234|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco031.dbf                                             |            40|    11900|    30000
+          235|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco032.dbf                                             |            40|    11900|    30000
+          236|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco033.dbf                                             |            39|    11800|    30000
+          237|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco034.dbf                                             |            39|    11600|    30000
+          238|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco035.dbf                                             |            40|    12000|    30000
+          239|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco036.dbf                                             |            39|    11800|    30000
+          240|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco037.dbf                                             |            39|    11700|    30000
+          241|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco038.dbf                                             |            39|    11800|    30000
+          242|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco039.dbf                                             |            39|    11600|    30000
+          243|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco040.dbf                                             |            39|    11600|    30000
+          244|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco041.dbf                                             |            38|    11400|    30000
+          245|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco042.dbf                                             |            38|    11400|    30000
+          246|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco043.dbf                                             |            39|    11700|    30000
+          247|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco044.dbf                                             |            39|    11700|    30000
+          248|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco045.dbf                                             |            38|    11500|    30000
+          249|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco046.dbf                                             |            38|    11500|    30000
+          250|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco047.dbf                                             |            38|    11500|    30000
+          251|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco048.dbf                                             |            38|    11500|    30000
+          252|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco049.dbf                                             |            39|    11600|    30000
+          253|TSI_CONSINCO        |/oracle/oradata/orcl/tsi_consinco050.dbf                                             |            39|    11600|    30000
+          254|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice001.dbf                                              |            45|    13522|    30000
+          255|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice002.dbf                                              |            46|    13721|    30000
+          256|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice003.dbf                                              |            45|    13506|    30000
+          257|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice004.dbf                                              |            45|    13644|    30000
+          258|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice005.dbf                                              |            45|    13406|    30000
+          259|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw001.dbf                                           |           100|    30000|    30000
+          260|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw002.dbf                                           |           100|    30000|    30000
+          261|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw003.dbf                                           |           100|    30000|    30000
+          262|ARIUS               |/oracle/oradata/orcl/arius001.dbf                                                    |            54|    16170|    30000
+          263|ARIUS               |/oracle/oradata/orcl/arius002.dbf                                                    |            55|    16426|    30000
+          264|ARIUS               |/oracle/oradata/orcl/arius003.dbf                                                    |            54|    16124|    30000
+          265|INDICES             |/oracle/oradata/orcl/indices001.dbf                                                  |            49|    14791|    30000
+          266|INDICES             |/oracle/oradata/orcl/indices002.dbf                                                  |            50|    14860|    30000
+          267|TSD_SENIOR          |/oracle/oradata/orcl/tsd_senior001.dbf                                               |            83|    25000|    30000
+          268|TSD_SENIOR          |/oracle/oradata/orcl/tsd_senior002.dbf                                               |            83|    24900|    30000
+          269|TSI_SENIOR          |/oracle/oradata/orcl/tsi_senior001.dbf                                               |            20|     5900|    30000
+          270|TSI_SENIOR          |/oracle/oradata/orcl/tsi_senior002.dbf                                               |            21|     6200|    30000
+          271|USERSLOG            |/oracle/oradata/orcl/userslog001.dbf                                                 |            35|    10411|    30000
+          272|USERSLOG            |/oracle/oradata/orcl/userslog002.dbf                                                 |            35|    10429|    30000
+          273|TBS_NDD_CERTIFICADOS|/oracle/oradata/orcl/tbs_ndd_certificados001.dbf                                     |             0|        2|    30000
+          274|USERLOG             |/oracle/oradata/orcl/userlog001.dbf                                                  |             0|        2|    30000
+          275|SIMPLIFICACAO_I     |/oracle/oradata/orcl/simplificacao_i001.dbf                                          |             1|      186|    30000
+          276|SIMPLIFICACAO_D     |/oracle/oradata/orcl/simplificacao_d001.dbf                                          |             2|      465|    30000
+          277|ARQMORTO            |/oracle/oradata/orcl/arqmorto001.dbf                                                 |            50|    15076|    30000
+          278|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw001.dbf                                           |            61|    18200|    30000
+          279|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw002.dbf                                           |            61|    18200|    30000
+          280|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw003.dbf                                           |            61|    18200|    30000
+          281|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw004.dbf                                           |            61|    18300|    30000
+          282|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw005.dbf                                           |            61|    18300|    30000
+          283|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw006.dbf                                           |            61|    18300|    30000
+          284|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw007.dbf                                           |            61|    18400|    30000
+          285|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw008.dbf                                           |            61|    18300|    30000
+          286|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw009.dbf                                           |            61|    18400|    30000
+          287|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw010.dbf                                           |            62|    18500|    30000
+          288|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw011.dbf                                           |            61|    18400|    30000
+          289|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw012.dbf                                           |            61|    18400|    30000
+          290|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw013.dbf                                           |            61|    18400|    30000
+          291|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw014.dbf                                           |            61|    18300|    30000
+          292|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw015.dbf                                           |            61|    18300|    30000
+          293|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw016.dbf                                           |            61|    18300|    30000
+          294|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw017.dbf                                           |            61|    18300|    30000
+          295|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw018.dbf                                           |            61|    18300|    30000
+          296|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw019.dbf                                           |            61|    18300|    30000
+          297|TSD_CONSINCODW      |/oracle/oradata/orcl/tsd_consincodw020.dbf                                           |            61|    18200|    30000
+          298|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor001.dbf                                      |            68|    20300|    30000
+          299|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor002.dbf                                      |            68|    20400|    30000
+          300|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor003.dbf                                      |            68|    20400|    30000
+          301|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor004.dbf                                      |            68|    20300|    30000
+          302|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor005.dbf                                      |            68|    20400|    30000
+          303|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor001.dbf                                      |            58|    17300|    30000
+          304|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor002.dbf                                      |            58|    17400|    30000
+          305|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor003.dbf                                      |            59|    17600|    30000
+          306|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor004.dbf                                      |            59|    17600|    30000
+          307|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor005.dbf                                      |            59|    17700|    30000
+          308|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor006.dbf                                      |            68|    20500|    30000
+          309|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor007.dbf                                      |            68|    20500|    30000
+          310|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor008.dbf                                      |            67|    20200|    30000
+          311|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor009.dbf                                      |            67|    20200|    30000
+          312|TSD_CONSINCOMONITOR |/oracle/oradata/orcl/tsd_consincomonitor010.dbf                                      |            68|    20400|    30000
+          313|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor006.dbf                                      |            59|    17800|    30000
+          314|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor007.dbf                                      |            60|    18000|    30000
+          315|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor008.dbf                                      |            60|    17900|    30000
+          316|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor009.dbf                                      |            60|    18000|    30000
+          317|TSI_CONSINCOMONITOR |/oracle/oradata/orcl/tsi_consincomonitor010.dbf                                      |            58|    17400|    30000
+          318|TSI_CONSINCODW      |/oracle/oradata/orcl/tsi_consincodw005.dbf                                           |            30|     8900|    30000
+          319|UNDO1               |/oracle/oradata/orcl/undo1_04.dbf                                                    |            42|    13500|    32000
+          320|TSD_VORTICE         |/oracle/oradata/orcl/tsd_vortice006.dbf                                              |             2|      483|    30000
+          321|SENIOR_HML          |/oracle/oradata/orcl/senior_hml01.dbf                                                |            24|     7274|    30000
+          322|SENIOR_HML          |/oracle/oradata/orcl/senior_hml02.dbf                                                |            24|     7209|    30000
+          323|SENIOR_HML          |/oracle/oradata/orcl/senior_hml03.dbf                                                |            25|     7600|    30000
+          324|SENIOR_HML          |/oracle/oradata/orcl/senior_hml04.dbf                                                |            25|     7383|    30000
+          325|SENIOR_HML          |/oracle/oradata/orcl/senior_hml05.dbf                                                |            23|     6954|    30000
+          326|SYSAUX              |/oracle/oradata/orcl/sysaux02.dbf                                                    |            27|     8000|    30000
+          327|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio101.dbf                                             |           100|    30000|    30000
+          328|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio102.dbf                                             |           100|    30000|    30000
+          329|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio103.dbf                                             |           100|    30000|    30000
+          330|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio104.dbf                                             |           100|    30000|    30000
+          331|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio105.dbf                                             |           100|    30000|    30000
+          332|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio106.dbf                                             |           100|    30000|    30000
+          333|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio107.dbf                                             |           100|    30000|    30000
+          334|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio108.dbf                                             |            89|    26700|    30000
+          335|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio109.dbf                                             |            88|    26550|    30000
+          336|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio110.dbf                                             |            66|    21050|    32000
+          337|UNDO1               |/oracle/oradata/orcl/undo1_01.dbf                                                    | 			100|    29500|        0
+          338|UNDO1               |/oracle/oradata/orcl/undo1_02.dbf                                                    | 			100|    30000|        0
+          339|UNDO1               |/oracle/oradata/orcl/undo1_03.dbf                                                    | 			100|    30000|        0
+          340|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio111.dbf                                             |            66|    21000|    32000
+          341|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio112.dbf                                             |            66|    21050|    32000
+          342|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio113.dbf                                             |            45|    14350|    32000
+          343|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio114.dbf                                             |            44|    14100|    32000
+          344|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio115.dbf                                             |            44|    14150|    32000
+          345|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio116.dbf                                             |            29|     9350|    32000
+          346|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio117.dbf                                             |            29|     9350|    32000
+          347|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio118.dbf                                             |            17|     5500|    32000
+          348|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio119.dbf                                             |            17|     5450|    32000
+          349|TSD_VITRUVIO        |/oracle/oradata/orcl/tsd_vitruvio120.dbf                                             |            17|     5400|    32000
+################################################BACKUP´S#################################################
+Tipos de Backup: RMAN - dpnoite - dpdia
+
+Tipo: fullbackup
+Diretório:/oracle/backup-orcl-rman
+Tamanho:32 Gb
+Horário de inicio:01:10
+Duração média:55 minutes
+
+Tipo: dbnoite
+Diretório:/oracle/backup-orcl-dbnoite
+Tamanho:2 Gb
+Horário de inicio:01:10
+Duração média:55 minutes
+##########################################BANCO##########################################################
+Nome Instância:nnd
+Tipo: Produção
+Tamanho Banco Físico:
+Database Size       |Used space          |Free space
+7349 GB             |6908 GB             |441 GB
+
+Tamanho Banco Lógico:
+_________Size_|_Type__________
+   1,964,811M | INDEX
+           0M | INDEX PARTITION
+           3M | LOB PARTITION
+         227M | LOBINDEX
+     276,027M | LOBSEGMENT
+           0M | NESTED TABLE
+   4,685,178M | TABLE
+          11M | TABLE PARTITION
+--------------|----------------
+     6,763.9G | Total
+
+
+Crescimento da base:
+Date___|TotalUsage|MonthGrown|Percentage
+May2024|  3,766.5G| -234,916M|    106.5%
+Jun2024|  3,537.1G| +137,490M|    100.0%
+Jul2024|  3,671.4G| +170,377M|    103.8%
+Aug2024|  3,837.8G| +226,953M|    108.5%
+Sep2024|  4,059.4G| +258,005M|    114.8%
+Oct2024|  4,311.4G| +300,375M|    121.9%
+Nov2024|  4,604.7G| +412,445M|    130.2%
+Dec2024|  5,007.5G| +264,518M|    141.6%
+Jan2025|  5,265.8G|  +74,344M|    148.9%
+Feb2025|  5,338.4G| +228,541M|    150.9%
+Mar2025|  5,561.6G| +281,090M|    157.2%
+Apr2025|  5,836.1G| +304,007M|    165.0%
+May2025|  6,133.0G| +349,446M|    173.4%
+Jun2025|  6,474.2G| +315,464M|    183.0%
+Jul2025|  6,782.3G| +297,708M|    191.7%
+Aug2025|  7,073.0G| +179,176M|    200.0%
+Sep2025|  7,248.0G|       +0M|    204.9%
+
+Geração de archives:
+HH = [   01Sep |   02Sep |   03Sep |   04Sep |   05Sep |   06Sep |   07Sep |   08Sep |  09Sep ]
+-- = [---------|---------|---------|---------|---------|---------|---------|---------|--------]
+00 = [   4,569M|   2,110M|   1,980M|   1,780M|   2,074M|   2,374M|   2,160M|   3,039M|  2,389M]
+01 = [  12,259M|   6,919M|   6,760M|   6,635M|  26,284M|   6,728M|   6,715M|   6,842M|  6,795M]
+02 = [   7,056M|   3,006M|   2,891M|   2,390M|   2,348M|   3,157M|   3,214M|   3,508M|  3,290M]
+03 = [   9,922M|   4,755M|   5,271M|   3,982M|   1,805M|   4,661M|   4,481M|   5,589M|  4,749M]
+04 = [  16,344M|  17,075M|  16,758M|  14,811M|  16,507M|  16,046M|  15,882M|  16,299M| 16,077M]
+05 = [  16,937M|  19,782M|  23,686M|  26,613M|  30,038M|  33,814M|  38,135M|  41,760M| 26,601M]
+06 = [   1,878M|   1,907M|   1,856M|   1,838M|   1,851M|   1,753M|   1,030M|   1,838M| 20,469M]
+07 = [   9,987M|  10,052M|   9,943M|   9,803M|   9,910M|   9,962M|   1,290M|   9,739M| 10,019M]
+08 = [   3,762M|   2,911M|  14,863M|   2,763M|  20,888M|   2,667M|   2,023M|   3,181M|  3,430M]
+09 = [   3,623M|   3,879M|  18,496M|   3,137M|  27,277M|   3,921M|   2,599M|   3,483M|  2,137M]
+10 = [   5,211M|   5,157M|   4,250M|   4,272M|  28,364M|   4,887M|   3,666M|   4,805M|        ]
+11 = [   4,959M|   5,248M|   5,184M|   4,611M|   5,049M|   5,545M|   4,162M|   4,682M|        ]
+12 = [   4,570M|   3,986M|   3,539M|   3,197M|   4,516M|   4,937M|   3,900M|   4,093M|        ]
+13 = [   3,637M|   3,914M|   3,823M|   3,451M|   3,343M|   4,498M|   3,253M|   3,574M|        ]
+14 = [   5,212M|   4,284M|   4,681M|   5,436M|   4,840M|   3,661M|   2,256M|   3,921M|        ]
+15 = [   5,321M|   5,493M|   3,878M|   3,266M|  23,046M|   4,043M|   2,424M|   5,103M|        ]
+16 = [   5,381M|   6,178M|   4,271M|  58,143M|   4,761M|   4,291M|   2,533M|   4,689M|        ]
+17 = [   5,100M|   4,618M|   3,577M|  11,079M|  15,080M|   4,375M|   2,505M|   5,140M|        ]
+18 = [   4,515M|   4,099M|   3,412M|   3,437M|   4,539M|   3,749M|   2,532M|   4,396M|        ]
+19 = [   3,747M|   3,570M|   2,885M|   3,103M|   4,259M|   3,537M|   2,317M|   3,630M|        ]
+20 = [   3,890M|   3,561M|   3,121M|   2,780M|   3,826M|   3,356M|   2,337M|   3,551M|        ]
+21 = [   3,278M|   3,113M|   2,228M|   2,083M|   2,944M|   2,546M|   1,153M|   3,060M|        ]
+22 = [   2,053M|   1,766M|   1,453M|   1,440M|   1,701M|   1,179M|   1,849M|   1,750M|        ]
+23 = [   5,811M|   5,362M|   7,488M|   5,719M|   6,329M|   5,091M|  12,971M|   5,617M|        ]
+-- = [---------|---------|---------|---------|---------|---------|---------|---------|--------]
+DD = [ 149,025M| 132,744M| 156,295M| 185,770M| 251,580M| 140,778M| 125,389M| 153,289M| 95,955M]
+
+
+Local dos archives:
+/u01/archive/orcl/
+
+Local físico dos datafiles e tamanho:
+		  FID|TBS                 |FN                                                                                   |           PCT|  MB_USED|   MB_MAX
+            1|SYSTEM              |/u01/oradata/orcl/system01.dbf                                                    |            30|     8929|    30000
+            2|SYSAUX              |/u01/oradata/orcl/sysaux01.dbf                                                    |           100|    30000|    30000
+            3|TSI_CONSINCODW      |/u01/oradata/orcl/tsi_consincodw004.dbf                                           |            29|     8800|    30000
+            4|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio001.dbf                                             |           100|    30000|    30000
+            5|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio002.dbf                                             |           100|    30000|    30000
+            6|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio003.dbf                                             |           100|    30000|    30000
+            7|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio004.dbf                                             |           100|    30000|    30000
+            8|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio005.dbf                                             |           100|    30000|    30000
+            9|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio006.dbf                                             |           100|    30000|    30000
+           10|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio007.dbf                                             |           100|    30000|    30000
+           11|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio008.dbf                                             |           100|    30000|    30000
+           12|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio009.dbf                                             |           100|    30000|    30000
+           13|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio010.dbf                                             |           100|    30000|    30000
+           14|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio011.dbf                                             |           100|    30000|    30000
+           15|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio012.dbf                                             |           100|    30000|    30000
+           16|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio013.dbf                                             |           100|    30000|    30000
+           17|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio014.dbf                                             |           100|    30000|    30000
+           18|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio015.dbf                                             |           100|    30000|    30000
+           19|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio016.dbf                                             |           100|    30000|    30000
+           20|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio017.dbf                                             |           100|    30000|    30000
+           21|TEMP1               |/u01/oradata/orcl/temp1_01.dbf                                                    | 			100|    30000|        0
+           21|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio018.dbf                                             |           100|    30000|    30000
+           22|TEMP1               |/u01/oradata/orcl/temp1_02.dbf                                                    | 			100|    30000|        0
+           22|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio019.dbf                                             |           100|    30000|    30000
+           23|TEMP1               |/u01/oradata/orcl/temp1_03.dbf                                                    | 			100|    30000|        0
+           23|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio020.dbf                                             |           100|    30000|    30000
+           24|TEMP1               |/u01/oradata/orcl/temp1_04.dbf                                                    | 			100|    30000|        0
+           24|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio021.dbf                                             |           100|    30000|    30000
+           25|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio022.dbf                                             |           100|    30000|    30000
+           26|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio023.dbf                                             |           100|    30000|    30000
+           27|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio024.dbf                                             |           100|    30000|    30000
+           28|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio025.dbf                                             |           100|    30000|    30000
+           29|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio026.dbf                                             |           100|    30000|    30000
+           30|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio027.dbf                                             |           100|    30000|    30000
+           31|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio028.dbf                                             |           100|    30000|    30000
+           32|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio029.dbf                                             |           100|    30000|    30000
+           33|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio030.dbf                                             |           100|    30000|    30000
+           34|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio031.dbf                                             |           100|    30000|    30000
+           35|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio032.dbf                                             |           100|    30000|    30000
+           36|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio033.dbf                                             |           100|    30000|    30000
+           37|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio034.dbf                                             |           100|    30000|    30000
+           38|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio035.dbf                                             |           100|    30000|    30000
+           39|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio036.dbf                                             |           100|    30000|    30000
+           40|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio037.dbf                                             |           100|    30000|    30000
+           41|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio038.dbf                                             |           100|    30000|    30000
+           42|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio039.dbf                                             |           100|    30000|    30000
+           43|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio040.dbf                                             |           100|    30000|    30000
+           44|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio041.dbf                                             |           100|    30000|    30000
+           45|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio042.dbf                                             |           100|    30000|    30000
+           46|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio043.dbf                                             |           100|    30000|    30000
+           47|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio044.dbf                                             |           100|    30000|    30000
+           48|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio045.dbf                                             |           100|    30000|    30000
+           49|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio046.dbf                                             |           100|    30000|    30000
+           50|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio047.dbf                                             |           100|    30000|    30000
+           51|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio048.dbf                                             |           100|    30000|    30000
+           52|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio049.dbf                                             |           100|    30000|    30000
+           53|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio050.dbf                                             |           100|    30000|    30000
+           54|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio051.dbf                                             |           100|    30000|    30000
+           55|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio052.dbf                                             |           100|    30000|    30000
+           56|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio053.dbf                                             |           100|    30000|    30000
+           57|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio054.dbf                                             |           100|    30000|    30000
+           58|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio055.dbf                                             |           100|    30000|    30000
+           59|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio056.dbf                                             |           100|    30000|    30000
+           60|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio057.dbf                                             |           100|    30000|    30000
+           61|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio058.dbf                                             |           100|    30000|    30000
+           62|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio059.dbf                                             |           100|    30000|    30000
+           63|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio060.dbf                                             |           100|    30000|    30000
+           64|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio061.dbf                                             |           100|    30000|    30000
+           65|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio062.dbf                                             |           100|    30000|    30000
+           66|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio063.dbf                                             |           100|    30000|    30000
+           67|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio064.dbf                                             |           100|    30000|    30000
+           68|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio065.dbf                                             |           100|    30000|    30000
+           69|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio066.dbf                                             |           100|    30000|    30000
+           70|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio067.dbf                                             |           100|    30000|    30000
+           71|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio068.dbf                                             |           100|    30000|    30000
+           72|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio069.dbf                                             |           100|    30000|    30000
+           73|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio070.dbf                                             |           100|    30000|    30000
+           74|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio071.dbf                                             |           100|    30000|    30000
+           75|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio072.dbf                                             |           100|    30000|    30000
+           76|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio073.dbf                                             |           100|    30000|    30000
+           77|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio074.dbf                                             |           100|    30000|    30000
+           78|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio075.dbf                                             |           100|    30000|    30000
+           79|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio076.dbf                                             |           100|    30000|    30000
+           80|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio077.dbf                                             |           100|    30000|    30000
+           81|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio078.dbf                                             |           100|    30000|    30000
+           82|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio079.dbf                                             |           100|    30000|    30000
+           83|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio080.dbf                                             |           100|    30000|    30000
+           84|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio081.dbf                                             |           100|    30000|    30000
+           85|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio082.dbf                                             |           100|    30000|    30000
+           86|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio083.dbf                                             |           100|    30000|    30000
+           87|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio084.dbf                                             |           100|    30000|    30000
+           88|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio085.dbf                                             |           100|    30000|    30000
+           89|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio086.dbf                                             |           100|    30000|    30000
+           90|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio087.dbf                                             |           100|    30000|    30000
+           91|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio088.dbf                                             |           100|    30000|    30000
+           92|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio089.dbf                                             |           100|    30000|    30000
+           93|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio090.dbf                                             |           100|    30000|    30000
+           94|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio091.dbf                                             |           100|    30000|    30000
+           95|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio092.dbf                                             |           100|    30000|    30000
+           96|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio093.dbf                                             |           100|    30000|    30000
+           97|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio094.dbf                                             |           100|    30000|    30000
+           98|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio095.dbf                                             |           100|    30000|    30000
+           99|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio096.dbf                                             |           100|    30000|    30000
+          100|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio097.dbf                                             |           100|    30000|    30000
+          101|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio098.dbf                                             |           100|    30000|    30000
+          102|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio099.dbf                                             |           100|    30000|    30000
+          103|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio100.dbf                                             |           100|    30000|    30000
+          104|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco001.dbf                                             |            72|    21700|    30000
+          105|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco002.dbf                                             |            72|    21500|    30000
+          106|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco003.dbf                                             |            73|    21900|    30000
+          107|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco004.dbf                                             |            73|    22000|    30000
+          108|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco005.dbf                                             |            74|    22300|    30000
+          109|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco006.dbf                                             |            74|    22300|    30000
+          110|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco007.dbf                                             |            73|    21800|    30000
+          111|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco008.dbf                                             |            72|    21600|    30000
+          112|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco009.dbf                                             |            72|    21700|    30000
+          113|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco010.dbf                                             |            72|    21600|    30000
+          114|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco011.dbf                                             |            72|    21600|    30000
+          115|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco012.dbf                                             |            72|    21500|    30000
+          116|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco013.dbf                                             |            73|    21900|    30000
+          117|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco014.dbf                                             |            73|    21800|    30000
+          118|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco015.dbf                                             |            73|    21800|    30000
+          119|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco016.dbf                                             |            73|    22000|    30000
+          120|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco017.dbf                                             |            73|    21800|    30000
+          121|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco018.dbf                                             |            73|    21800|    30000
+          122|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco019.dbf                                             |            72|    21500|    30000
+          123|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco020.dbf                                             |            72|    21600|    30000
+          124|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco021.dbf                                             |            71|    21400|    30000
+          125|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco022.dbf                                             |            72|    21600|    30000
+          126|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco023.dbf                                             |            72|    21600|    30000
+          127|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco024.dbf                                             |            72|    21600|    30000
+          128|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco025.dbf                                             |            72|    21500|    30000
+          129|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco026.dbf                                             |            72|    21600|    30000
+          130|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco027.dbf                                             |            72|    21600|    30000
+          131|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco028.dbf                                             |            72|    21600|    30000
+          132|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco029.dbf                                             |            73|    21800|    30000
+          133|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco030.dbf                                             |            73|    21800|    30000
+          134|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco031.dbf                                             |            73|    22000|    30000
+          135|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco032.dbf                                             |            73|    21900|    30000
+          136|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco033.dbf                                             |            73|    21900|    30000
+          137|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco034.dbf                                             |            72|    21700|    30000
+          138|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco035.dbf                                             |            72|    21700|    30000
+          139|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco036.dbf                                             |            72|    21600|    30000
+          140|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco037.dbf                                             |            72|    21500|    30000
+          141|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco038.dbf                                             |            71|    21200|    30000
+          142|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco039.dbf                                             |            70|    20900|    30000
+          143|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco040.dbf                                             |            68|    20400|    30000
+          144|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco041.dbf                                             |            68|    20300|    30000
+          145|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco042.dbf                                             |            68|    20300|    30000
+          146|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco043.dbf                                             |            68|    20300|    30000
+          147|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco044.dbf                                             |            67|    20200|    30000
+          148|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco045.dbf                                             |            68|    20300|    30000
+          149|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco046.dbf                                             |            67|    20200|    30000
+          150|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco047.dbf                                             |            67|    20100|    30000
+          151|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco048.dbf                                             |            67|    20100|    30000
+          152|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco049.dbf                                             |            67|    20200|    30000
+          153|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco050.dbf                                             |            67|    20100|    30000
+          154|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco051.dbf                                             |            67|    20100|    30000
+          155|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco052.dbf                                             |            67|    20100|    30000
+          156|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco053.dbf                                             |            67|    20100|    30000
+          157|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco054.dbf                                             |            67|    20200|    30000
+          158|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco055.dbf                                             |            67|    20200|    30000
+          159|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco056.dbf                                             |            68|    20300|    30000
+          160|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco057.dbf                                             |            67|    20100|    30000
+          161|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco058.dbf                                             |            67|    20000|    30000
+          162|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco059.dbf                                             |            68|    20300|    30000
+          163|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco060.dbf                                             |            68|    20300|    30000
+          164|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco061.dbf                                             |            68|    20400|    30000
+          165|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco062.dbf                                             |            68|    20400|    30000
+          166|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco063.dbf                                             |            68|    20400|    30000
+          167|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco064.dbf                                             |            68|    20500|    30000
+          168|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco065.dbf                                             |            68|    20400|    30000
+          169|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco066.dbf                                             |            68|    20300|    30000
+          170|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco067.dbf                                             |            68|    20400|    30000
+          171|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco068.dbf                                             |            69|    20700|    30000
+          172|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco069.dbf                                             |            68|    20300|    30000
+          173|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco070.dbf                                             |            69|    20600|    30000
+          174|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco071.dbf                                             |            69|    20700|    30000
+          175|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco072.dbf                                             |            70|    20900|    30000
+          176|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco073.dbf                                             |            69|    20800|    30000
+          177|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco074.dbf                                             |            71|    21200|    30000
+          178|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco075.dbf                                             |            71|    21200|    30000
+          179|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco076.dbf                                             |            71|    21200|    30000
+          180|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco077.dbf                                             |            71|    21200|    30000
+          181|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco078.dbf                                             |            70|    21100|    30000
+          182|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco079.dbf                                             |            70|    21100|    30000
+          183|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco080.dbf                                             |            71|    21200|    30000
+          184|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco081.dbf                                             |            71|    21400|    30000
+          185|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco082.dbf                                             |            71|    21300|    30000
+          186|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco083.dbf                                             |            71|    21300|    30000
+          187|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco084.dbf                                             |            70|    21100|    30000
+          188|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco085.dbf                                             |            71|    21300|    30000
+          189|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco086.dbf                                             |            70|    21100|    30000
+          190|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco087.dbf                                             |            71|    21200|    30000
+          191|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco088.dbf                                             |            71|    21200|    30000
+          192|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco089.dbf                                             |            70|    21100|    30000
+          193|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco090.dbf                                             |            71|    21400|    30000
+          194|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco091.dbf                                             |            71|    21200|    30000
+          195|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco092.dbf                                             |            71|    21200|    30000
+          196|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco093.dbf                                             |            70|    21100|    30000
+          197|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco094.dbf                                             |            70|    21100|    30000
+          198|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco095.dbf                                             |            71|    21300|    30000
+          199|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco096.dbf                                             |            71|    21300|    30000
+          200|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco097.dbf                                             |            71|    21200|    30000
+          201|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco098.dbf                                             |            71|    21200|    30000
+          202|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco099.dbf                                             |            72|    21500|    30000
+          203|TSD_CONSINCO        |/u01/oradata/orcl/tsd_consinco100.dbf                                             |            72|    21600|    30000
+          204|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco001.dbf                                             |            39|    11700|    30000
+          205|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco002.dbf                                             |            40|    11900|    30000
+          206|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco003.dbf                                             |            39|    11600|    30000
+          207|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco004.dbf                                             |            39|    11600|    30000
+          208|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco005.dbf                                             |            39|    11700|    30000
+          209|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco006.dbf                                             |            40|    11900|    30000
+          210|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco007.dbf                                             |            40|    11900|    30000
+          211|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco008.dbf                                             |            39|    11600|    30000
+          212|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco009.dbf                                             |            39|    11600|    30000
+          213|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco010.dbf                                             |            38|    11500|    30000
+          214|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco011.dbf                                             |            38|    11500|    30000
+          215|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco012.dbf                                             |            39|    11800|    30000
+          216|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco013.dbf                                             |            39|    11600|    30000
+          217|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco014.dbf                                             |            37|    11200|    30000
+          218|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco015.dbf                                             |            38|    11300|    30000
+          219|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco016.dbf                                             |            37|    11200|    30000
+          220|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco017.dbf                                             |            38|    11400|    30000
+          221|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco018.dbf                                             |            39|    11600|    30000
+          222|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco019.dbf                                             |            39|    11800|    30000
+          223|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco020.dbf                                             |            40|    11900|    30000
+          224|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco021.dbf                                             |            40|    11900|    30000
+          225|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco022.dbf                                             |            40|    12100|    30000
+          226|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco023.dbf                                             |            40|    12100|    30000
+          227|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco024.dbf                                             |            41|    12200|    30000
+          228|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco025.dbf                                             |            41|    12200|    30000
+          229|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco026.dbf                                             |            40|    12000|    30000
+          230|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco027.dbf                                             |            39|    11700|    30000
+          231|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco028.dbf                                             |            40|    12000|    30000
+          232|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco029.dbf                                             |            40|    11900|    30000
+          233|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco030.dbf                                             |            40|    11900|    30000
+          234|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco031.dbf                                             |            40|    11900|    30000
+          235|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco032.dbf                                             |            40|    11900|    30000
+          236|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco033.dbf                                             |            39|    11800|    30000
+          237|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco034.dbf                                             |            39|    11600|    30000
+          238|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco035.dbf                                             |            40|    12000|    30000
+          239|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco036.dbf                                             |            39|    11800|    30000
+          240|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco037.dbf                                             |            39|    11700|    30000
+          241|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco038.dbf                                             |            39|    11800|    30000
+          242|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco039.dbf                                             |            39|    11600|    30000
+          243|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco040.dbf                                             |            39|    11600|    30000
+          244|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco041.dbf                                             |            38|    11400|    30000
+          245|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco042.dbf                                             |            38|    11400|    30000
+          246|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco043.dbf                                             |            39|    11700|    30000
+          247|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco044.dbf                                             |            39|    11700|    30000
+          248|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco045.dbf                                             |            38|    11500|    30000
+          249|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco046.dbf                                             |            38|    11500|    30000
+          250|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco047.dbf                                             |            38|    11500|    30000
+          251|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco048.dbf                                             |            38|    11500|    30000
+          252|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco049.dbf                                             |            39|    11600|    30000
+          253|TSI_CONSINCO        |/u01/oradata/orcl/tsi_consinco050.dbf                                             |            39|    11600|    30000
+          254|TSD_VORTICE         |/u01/oradata/orcl/tsd_vortice001.dbf                                              |            45|    13522|    30000
+          255|TSD_VORTICE         |/u01/oradata/orcl/tsd_vortice002.dbf                                              |            46|    13721|    30000
+          256|TSD_VORTICE         |/u01/oradata/orcl/tsd_vortice003.dbf                                              |            45|    13506|    30000
+          257|TSD_VORTICE         |/u01/oradata/orcl/tsd_vortice004.dbf                                              |            45|    13644|    30000
+          258|TSD_VORTICE         |/u01/oradata/orcl/tsd_vortice005.dbf                                              |            45|    13406|    30000
+          259|TSI_CONSINCODW      |/u01/oradata/orcl/tsi_consincodw001.dbf                                           |           100|    30000|    30000
+          260|TSI_CONSINCODW      |/u01/oradata/orcl/tsi_consincodw002.dbf                                           |           100|    30000|    30000
+          261|TSI_CONSINCODW      |/u01/oradata/orcl/tsi_consincodw003.dbf                                           |           100|    30000|    30000
+          262|ARIUS               |/u01/oradata/orcl/arius001.dbf                                                    |            54|    16170|    30000
+          263|ARIUS               |/u01/oradata/orcl/arius002.dbf                                                    |            55|    16426|    30000
+          264|ARIUS               |/u01/oradata/orcl/arius003.dbf                                                    |            54|    16124|    30000
+          265|INDICES             |/u01/oradata/orcl/indices001.dbf                                                  |            49|    14791|    30000
+          266|INDICES             |/u01/oradata/orcl/indices002.dbf                                                  |            50|    14860|    30000
+          267|TSD_SENIOR          |/u01/oradata/orcl/tsd_senior001.dbf                                               |            83|    25000|    30000
+          268|TSD_SENIOR          |/u01/oradata/orcl/tsd_senior002.dbf                                               |            83|    24900|    30000
+          269|TSI_SENIOR          |/u01/oradata/orcl/tsi_senior001.dbf                                               |            20|     5900|    30000
+          270|TSI_SENIOR          |/u01/oradata/orcl/tsi_senior002.dbf                                               |            21|     6200|    30000
+          271|USERSLOG            |/u01/oradata/orcl/userslog001.dbf                                                 |            35|    10411|    30000
+          272|USERSLOG            |/u01/oradata/orcl/userslog002.dbf                                                 |            35|    10429|    30000
+          273|TBS_NDD_CERTIFICADOS|/u01/oradata/orcl/tbs_ndd_certificados001.dbf                                     |             0|        2|    30000
+          274|USERLOG             |/u01/oradata/orcl/userlog001.dbf                                                  |             0|        2|    30000
+          275|SIMPLIFICACAO_I     |/u01/oradata/orcl/simplificacao_i001.dbf                                          |             1|      186|    30000
+          276|SIMPLIFICACAO_D     |/u01/oradata/orcl/simplificacao_d001.dbf                                          |             2|      465|    30000
+          277|ARQMORTO            |/u01/oradata/orcl/arqmorto001.dbf                                                 |            50|    15076|    30000
+          278|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw001.dbf                                           |            61|    18200|    30000
+          279|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw002.dbf                                           |            61|    18200|    30000
+          280|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw003.dbf                                           |            61|    18200|    30000
+          281|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw004.dbf                                           |            61|    18300|    30000
+          282|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw005.dbf                                           |            61|    18300|    30000
+          283|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw006.dbf                                           |            61|    18300|    30000
+          284|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw007.dbf                                           |            61|    18400|    30000
+          285|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw008.dbf                                           |            61|    18300|    30000
+          286|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw009.dbf                                           |            61|    18400|    30000
+          287|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw010.dbf                                           |            62|    18500|    30000
+          288|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw011.dbf                                           |            61|    18400|    30000
+          289|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw012.dbf                                           |            61|    18400|    30000
+          290|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw013.dbf                                           |            61|    18400|    30000
+          291|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw014.dbf                                           |            61|    18300|    30000
+          292|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw015.dbf                                           |            61|    18300|    30000
+          293|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw016.dbf                                           |            61|    18300|    30000
+          294|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw017.dbf                                           |            61|    18300|    30000
+          295|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw018.dbf                                           |            61|    18300|    30000
+          296|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw019.dbf                                           |            61|    18300|    30000
+          297|TSD_CONSINCODW      |/u01/oradata/orcl/tsd_consincodw020.dbf                                           |            61|    18200|    30000
+          298|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor001.dbf                                      |            68|    20300|    30000
+          299|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor002.dbf                                      |            68|    20400|    30000
+          300|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor003.dbf                                      |            68|    20400|    30000
+          301|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor004.dbf                                      |            68|    20300|    30000
+          302|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor005.dbf                                      |            68|    20400|    30000
+          303|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor001.dbf                                      |            58|    17300|    30000
+          304|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor002.dbf                                      |            58|    17400|    30000
+          305|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor003.dbf                                      |            59|    17600|    30000
+          306|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor004.dbf                                      |            59|    17600|    30000
+          307|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor005.dbf                                      |            59|    17700|    30000
+          308|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor006.dbf                                      |            68|    20500|    30000
+          309|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor007.dbf                                      |            68|    20500|    30000
+          310|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor008.dbf                                      |            67|    20200|    30000
+          311|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor009.dbf                                      |            67|    20200|    30000
+          312|TSD_CONSINCOMONITOR |/u01/oradata/orcl/tsd_consincomonitor010.dbf                                      |            68|    20400|    30000
+          313|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor006.dbf                                      |            59|    17800|    30000
+          314|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor007.dbf                                      |            60|    18000|    30000
+          315|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor008.dbf                                      |            60|    17900|    30000
+          316|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor009.dbf                                      |            60|    18000|    30000
+          317|TSI_CONSINCOMONITOR |/u01/oradata/orcl/tsi_consincomonitor010.dbf                                      |            58|    17400|    30000
+          318|TSI_CONSINCODW      |/u01/oradata/orcl/tsi_consincodw005.dbf                                           |            30|     8900|    30000
+          319|UNDO1               |/u01/oradata/orcl/undo1_04.dbf                                                    |            42|    13500|    32000
+          320|TSD_VORTICE         |/u01/oradata/orcl/tsd_vortice006.dbf                                              |             2|      483|    30000
+          321|SENIOR_HML          |/u01/oradata/orcl/senior_hml01.dbf                                                |            24|     7274|    30000
+          322|SENIOR_HML          |/u01/oradata/orcl/senior_hml02.dbf                                                |            24|     7209|    30000
+          323|SENIOR_HML          |/u01/oradata/orcl/senior_hml03.dbf                                                |            25|     7600|    30000
+          324|SENIOR_HML          |/u01/oradata/orcl/senior_hml04.dbf                                                |            25|     7383|    30000
+          325|SENIOR_HML          |/u01/oradata/orcl/senior_hml05.dbf                                                |            23|     6954|    30000
+          326|SYSAUX              |/u01/oradata/orcl/sysaux02.dbf                                                    |            27|     8000|    30000
+          327|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio101.dbf                                             |           100|    30000|    30000
+          328|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio102.dbf                                             |           100|    30000|    30000
+          329|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio103.dbf                                             |           100|    30000|    30000
+          330|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio104.dbf                                             |           100|    30000|    30000
+          331|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio105.dbf                                             |           100|    30000|    30000
+          332|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio106.dbf                                             |           100|    30000|    30000
+          333|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio107.dbf                                             |           100|    30000|    30000
+          334|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio108.dbf                                             |            89|    26700|    30000
+          335|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio109.dbf                                             |            88|    26550|    30000
+          336|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio110.dbf                                             |            66|    21050|    32000
+          337|UNDO1               |/u01/oradata/orcl/undo1_01.dbf                                                    | 			100|    29500|        0
+          338|UNDO1               |/u01/oradata/orcl/undo1_02.dbf                                                    | 			100|    30000|        0
+          339|UNDO1               |/u01/oradata/orcl/undo1_03.dbf                                                    | 			100|    30000|        0
+          340|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio111.dbf                                             |            66|    21000|    32000
+          341|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio112.dbf                                             |            66|    21050|    32000
+          342|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio113.dbf                                             |            45|    14350|    32000
+          343|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio114.dbf                                             |            44|    14100|    32000
+          344|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio115.dbf                                             |            44|    14150|    32000
+          345|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio116.dbf                                             |            29|     9350|    32000
+          346|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio117.dbf                                             |            29|     9350|    32000
+          347|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio118.dbf                                             |            17|     5500|    32000
+          348|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio119.dbf                                             |            17|     5450|    32000
+          349|TSD_VITRUVIO        |/u01/oradata/orcl/tsd_vitruvio120.dbf                                             |            17|     5400|    32000
+################################################BACKUP´S#################################################
+Tipos de Backup: RMAN - dpnoite - dpdia
+
+Tipo: fullbackup
+Diretório:/u01/backup-orcl-rman
+Tamanho:120 Gb
+Horário de inicio:01:10
+Duração média:55 minutes
+
+Tipo: dbnoite
+Diretório:/u01/backup-orcl-dbnoite
+Tamanho:82 Gb
+Horário de inicio:01:10
+Duração média:55 minutes
+
+
+

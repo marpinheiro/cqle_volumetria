@@ -86,30 +86,14 @@ class VolumetriaAnalyzer
                 }
             }
 
-            // Archives (diário) - Ajustado para usar o campo 'geracao_archives_gb' ou formatado
-            $archivesGB = 0;
-            if (isset($instancia['geracao_archives_gb'])) {
-                $archivesGB = (float)$instancia['geracao_archives_gb'];
-            } elseif (isset($instancia['geracao_archives_formatted'])) {
-                // Extrai número de string como "157,14 GB"
-                $valorStr = preg_replace('/[^0-9.,]/', '', $instancia['geracao_archives_formatted']);
-                $archivesGB = (float)str_replace(',', '.', $valorStr);
-            } elseif (isset($instancia['media_archives'])) {
-                $archivesGB = (float)$instancia['media_archives'] / 1024; // se em MB
-            }
-
+            $archivesMB = $instancia['archive_size_daily_mb'] ?? 0;
+            $archivesGB = $archivesMB / 1024;
             $archiveDir = $instancia['archive_location'] ?? null;
 
-            if ($archivesGB > 0) {
-                $rootDir = $this->extractRootDirectory($archiveDir ?: $path); // Fallback se não tiver location
+            if ($archiveDir && $archivesGB > 0) {
+                $rootDir = $this->extractRootDirectory($archiveDir);
                 if ($rootDir && isset($partitions[$rootDir])) {
                     $partitions[$rootDir]['archives_gb_diario'] += $archivesGB;
-                } else {
-                    // Fallback para a partição principal se não mapeado
-                    $mainRoot = array_key_first($partitions);
-                    if ($mainRoot) {
-                        $partitions[$mainRoot]['archives_gb_diario'] += $archivesGB;
-                    }
                 }
             }
         }
