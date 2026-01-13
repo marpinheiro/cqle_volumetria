@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -443,7 +442,6 @@
         opacity: 0;
         transform: translateY(30px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -454,30 +452,18 @@
       animation: fadeInUp 0.6s ease-out;
     }
 
-    .card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .card:nth-child(4) {
-      animation-delay: 0.4s;
-    }
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
   </style>
 </head>
-
 <body>
   <div class="container">
     <!-- HEADER -->
     <div class="header">
       <h1>
-        <span>🎯</span>
+        <span>🎯</span> 
         Análise de Volumetria Oracle
         <span class="header-badge">v2.0 PRO</span>
       </h1>
@@ -498,6 +484,9 @@
       <div class="actions">
         <a href="index.php" class="btn btn-secondary">
           ← Nova Análise
+        </a>
+        <a href="index.php?action=volumetria" class="btn btn-primary" style="background: linear-gradient(135deg, #10b981, #059669);">
+          📊 Estudo de Volumetria
         </a>
         <a href="index.php?action=export&format=json" class="btn btn-primary">
           📥 Exportar JSON
@@ -641,7 +630,7 @@
             <?php if ($index > 0): ?>
               <div class="instance-separator"></div>
             <?php endif; ?>
-
+            
             <div class="instance-header">
               <div>
                 <h3>Instância: <?= htmlspecialchars($inst['instancia'] ?? 'N/D') ?></h3>
@@ -684,7 +673,7 @@
     <div class="card">
       <div class="card-header">
         <h2><span>💾</span> Backup</h2>
-        <?php
+        <?php 
         $backupStatus = $result['backup']['status_class'] ?? 'critico';
         $badgeClass = $backupStatus === 'excelente' ? 'badge-success' : ($backupStatus === 'atencao' ? 'badge-warning' : 'badge-danger');
         ?>
@@ -754,5 +743,4 @@
 
   </div>
 </body>
-
 </html>

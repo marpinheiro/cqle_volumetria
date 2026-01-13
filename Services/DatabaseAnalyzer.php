@@ -17,18 +17,19 @@ class DatabaseAnalyzer
       $monthGrown = [];
       $dd = [];
       $datafiles = [];
+      $archiveLocation = null;
 
       foreach ($lines as $idx => $line) {
         $line = trim($line);
         if (empty($line)) continue;
 
-        // Nome Instância - SUPER TOLERANTE
+        // Nome Instância
         if (preg_match('/Nome\s+Inst[âaà]ncia\s*:\s*(\S+)/iu', $line, $m)) {
           $data['instancia'] = $m[1];
           continue;
         }
 
-        // Tipo - ignora tipos de backup
+        // Tipo
         if (preg_match('/^Tipo\s*:\s*(.+)$/i', $line, $m)) {
           $tipo = trim($m[1]);
           $tiposBackup = ['fullbackup', 'dbnoite', 'dpnoite', 'dpdia', 'rman', 'incremental', 'differential'];
@@ -80,14 +81,20 @@ class DatabaseAnalyzer
           continue;
         }
 
-        // Datafiles - linhas com FID|TBS|...
+        // LOCAL DOS ARCHIVES
+        if (preg_match('/Local\s+dos\s+archives?\s*:\s*(.+)/iu', $line, $m)) {
+          $archiveLocation = trim($m[1]);
+          continue;
+        }
+
+        // DATAFILES - linhas com FID|TBS|FN|PCT|MB_USED|MB_MAX
         if (preg_match('/^\s*(\d+)\s*\|/i', $line)) {
           $parts = preg_split('/\s*\|\s*/', $line);
           if (count($parts) >= 6 && !stripos($line, 'FID')) {
             $datafiles[] = [
               'fid' => trim($parts[0]),
               'tbs' => trim($parts[1]),
-              'fn'  => trim($parts[2]),
+              'fn'  => trim($parts[2]), // CAMINHO COMPLETO
               'pct' => trim($parts[3]),
               'mb_used' => floatval(str_replace(',', '', trim($parts[4]))),
               'mb_max' => floatval(str_replace(',', '', trim($parts[5])))
@@ -121,7 +128,12 @@ class DatabaseAnalyzer
         'meses_validos' => count($positivos),
         'geracao_archives' => round($mediaArchivesMB, 2),
         'geracao_archives_formatted' => $this->formatSize($mediaArchivesMB),
-        'tamanho_datafiles_gb' => round($tamanhoDatafilesGB, 2)
+        'tamanho_datafiles_gb' => round($tamanhoDatafilesGB, 2),
+        
+        // NOVOS CAMPOS PARA VOLUMETRIA
+        'datafiles' => $datafiles, // Array completo com caminhos
+        'archive_location' => $archiveLocation, // Local dos archives
+        'archive_size_daily_mb' => round($mediaArchivesMB, 2) // Tamanho diário
       ];
 
       $instancias[] = $instanciaData;
@@ -149,7 +161,7 @@ class DatabaseAnalyzer
     if (preg_match('/(\d+[,.]?\d*)\s*(GB|G|MB|M|TB|T)?/i', $str, $m)) {
       $value = floatval(str_replace(',', '', $m[1]));
       $unit = strtoupper($m[2] ?? 'GB');
-
+      
       return match ($unit) {
         'TB', 'T' => $value * 1024,
         'GB', 'G' => $value,

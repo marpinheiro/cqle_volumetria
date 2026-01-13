@@ -1,17 +1,12 @@
 <?php
 
-/**
- * CQLE Softwares - Volumetria Oracle
- * Desenvolvido por: Marciano Silva
- * Versão 2.0 PRO
- */
-
 namespace Controllers;
 
 use Services\FileParserService;
 use Services\ServerAnalyzer;
 use Services\DatabaseAnalyzer;
 use Services\BackupAnalyzer;
+use Services\VolumetriaAnalyzer;
 use Utils\FileValidator;
 
 class VolumetriaController
@@ -20,6 +15,7 @@ class VolumetriaController
     private $serverAnalyzer;
     private $dbAnalyzer;
     private $backupAnalyzer;
+    private $volumetriaAnalyzer;
     private $validator;
 
     public function __construct()
@@ -28,12 +24,10 @@ class VolumetriaController
         $this->serverAnalyzer = new ServerAnalyzer();
         $this->dbAnalyzer = new DatabaseAnalyzer();
         $this->backupAnalyzer = new BackupAnalyzer();
+        $this->volumetriaAnalyzer = new VolumetriaAnalyzer();
         $this->validator = new FileValidator();
     }
 
-    /**
-     * Exibe página de upload
-     */
     public function showUploadPage(): void
     {
         $error = $_SESSION['error'] ?? null;
@@ -42,25 +36,19 @@ class VolumetriaController
         require BASE_PATH . '/views/upload.php';
     }
 
-    /**
-     * Processa arquivo enviado
-     */
     public function processFile(array $file): array
     {
         try {
-            // Valida arquivo
             $validation = $this->validator->validate($file);
             if (!$validation['valid']) {
                 throw new \Exception($validation['message']);
             }
 
-            // Cria diretório de uploads se não existir
             $uploadDir = BASE_PATH . '/uploads/';
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
 
-            // Move arquivo
             $fileName = uniqid('volumetria_') . '_' . basename($file['name']);
             $filePath = $uploadDir . $fileName;
 
@@ -68,15 +56,12 @@ class VolumetriaController
                 throw new \Exception('Erro ao salvar arquivo');
             }
 
-            // Parse do arquivo
             $parsedData = $this->parser->parseFile($filePath);
 
-            // Proteção contra chaves ausentes ou vazias
             $servidorData = $parsedData['servidor'] ?? '';
             $bancoData    = $parsedData['banco']    ?? [];
             $backupData   = $parsedData['backup']   ?? [];
 
-            // Análises com valores seguros
             $servidorAnalysis = $this->serverAnalyzer->analyze($servidorData);
             $bancoAnalysis = $this->dbAnalyzer->analyze($bancoData);
             $backupAnalysis = $this->backupAnalyzer->analyze($backupData);
@@ -93,10 +78,8 @@ class VolumetriaController
                 'raw_data' => $parsedData
             ];
 
-            // Remove arquivo temporário
             unlink($filePath);
 
-            // Salva em sessão para exportação
             $_SESSION['last_result'] = $result;
 
             return $result;
@@ -108,17 +91,35 @@ class VolumetriaController
         }
     }
 
-    /**
-     * Exibe resultados
-     */
     public function showResults(array $result): void
     {
         require BASE_PATH . '/views/results.php';
     }
 
     /**
-     * Exporta dados
+     * NOVO MÉTODO: Exibe estudo de volumetria
      */
+    public function showVolumetryStudy(array $result): void
+    {
+        try {
+            // Executa análise de volumetria
+            $volumetriaAnalysis = $this->volumetriaAnalyzer->analyzeVolumetry(
+                $result['servidor'] ?? [],
+                $result['banco'] ?? [],
+                $result['backup'] ?? []
+            );
+
+            // Passa dados para a view
+            $analysis = $volumetriaAnalysis;
+            $originalResult = $result;
+
+            require BASE_PATH . '/views/volumetria.php';
+        } catch (\Exception $e) {
+            $_SESSION['error'] = 'Erro ao processar estudo de volumetria: ' . $e->getMessage();
+            header('Location: index.php');
+        }
+    }
+
     public function export(array $data, string $format = 'json'): void
     {
         switch ($format) {
@@ -133,9 +134,6 @@ class VolumetriaController
         }
     }
 
-    /**
-     * Exporta JSON
-     */
     public function exportJSON(array $data): void
     {
         $filename = 'volumetria_' . date('Ymd_His') . '.json';
@@ -147,9 +145,6 @@ class VolumetriaController
         exit;
     }
 
-    /**
-     * Exporta TXT formatado
-     */
     public function exportTXT(array $data): void
     {
         $filename = 'volumetria_' . date('Ymd_His') . '.txt';
@@ -163,9 +158,6 @@ class VolumetriaController
         exit;
     }
 
-    /**
-     * Formata dados como TXT - VERSÃO PROFISSIONAL
-     */
     private function formatDataAsTXT(array $data): string
     {
         $txt = str_repeat('=', 100) . "\n";
@@ -251,14 +243,6 @@ class VolumetriaController
                 $txt .= sprintf("│ Tamanho de Datafiles:   %-68s │\n", number_format($inst['tamanho_datafiles_gb'] ?? 0, 2, ',', '.') . ' GB');
                 $txt .= "└──────────────────────────────────────────────────────────────────────────────────────────────┘\n\n";
             }
-
-            if (isset($banco['media_crescimento'])) {
-                $txt .= "RESUMO GERAL:\n";
-                $txt .= sprintf("  • Média de Crescimento: %s GB/mês\n", number_format($banco['media_crescimento'], 2, ',', '.'));
-                $txt .= sprintf("  • Média de Archives:    %s\n", $banco['media_archives_formatted'] ?? 'N/D');
-                $txt .= sprintf("  • Qtd. Instâncias:      %d\n", $banco['qtd_instancias'] ?? 0);
-                $txt .= "\n";
-            }
         } else {
             $txt .= "Nenhuma instância detectada.\n\n";
         }
@@ -285,11 +269,6 @@ class VolumetriaController
                 $txt .= sprintf("│ Duração:      %-79s │\n", $bkp['duracao_media'] ?? 'N/D');
                 $txt .= "└──────────────────────────────────────────────────────────────────────────────────────────────┘\n\n";
             }
-
-            if (isset($backup['recommendation'])) {
-                $txt .= "RECOMENDAÇÃO:\n";
-                $txt .= "  " . wordwrap($backup['recommendation'], 96, "\n  ") . "\n\n";
-            }
         } else {
             $txt .= "⚠ CRÍTICO: Nenhum backup configurado detectado!\n\n";
         }
@@ -304,9 +283,6 @@ class VolumetriaController
         return $txt;
     }
 
-    /**
-     * Gera resumo executivo
-     */
     private function generateSummary($servidor, $banco, $backup): array
     {
         $summary = [
@@ -339,30 +315,23 @@ class VolumetriaController
         return $summary;
     }
 
-    /**
-     * Calcula nível de criticidade geral
-     */
     private function calcularCriticidade($servidor, $banco, $backup): string
     {
         $pontos = 0;
 
-        // Filesystem crítico
         if (isset($servidor['filesystem_analysis']['critical']) && count($servidor['filesystem_analysis']['critical']) > 0) {
             $pontos += 3;
         }
 
-        // Sem backup
         if (($backup['total_backups'] ?? 0) == 0) {
             $pontos += 3;
         }
 
-        // Crescimento alto (mais de 200GB/mês)
         if (($banco['media_crescimento'] ?? 0) > 200) {
             $pontos += 2;
         }
 
-        // Archives muito alto (mais de 100GB)
-        if (($banco['media_archives'] ?? 0) > 100 * 1024) { // 100GB em MB
+        if (($banco['media_archives'] ?? 0) > 100 * 1024) {
             $pontos += 1;
         }
 
@@ -371,35 +340,28 @@ class VolumetriaController
         return 'SAUDÁVEL';
     }
 
-    /**
-     * Gera recomendações automáticas
-     */
     private function gerarRecomendacoes($servidor, $banco, $backup): array
     {
         $recomendacoes = [];
 
-        // Filesystem
         if (isset($servidor['filesystem_analysis']['critical']) && count($servidor['filesystem_analysis']['critical']) > 0) {
             $recomendacoes[] = 'URGENTE: Expandir filesystems críticos (uso >= 90%)';
         } elseif (isset($servidor['filesystem_analysis']['warnings']) && count($servidor['filesystem_analysis']['warnings']) > 0) {
             $recomendacoes[] = 'ATENÇÃO: Monitorar filesystems em alerta (uso >= 75%)';
         }
 
-        // Backup
         if (($backup['total_backups'] ?? 0) == 0) {
             $recomendacoes[] = 'CRÍTICO: Implementar estratégia de backup imediatamente!';
         } elseif (($backup['total_backups'] ?? 0) == 1) {
             $recomendacoes[] = 'Recomendado: Adicionar backup redundante (RMAN + DataPump)';
         }
 
-        // Crescimento
         if (($banco['media_crescimento'] ?? 0) > 300) {
             $recomendacoes[] = 'Crescimento acelerado detectado: Planejar expansão de storage';
         }
 
-        // Archives
         $archivesMB = $banco['media_archives'] ?? 0;
-        if ($archivesMB > 150 * 1024) { // 150GB
+        if ($archivesMB > 150 * 1024) {
             $recomendacoes[] = 'Geração de archives muito alta: Avaliar política de retenção';
         }
 
