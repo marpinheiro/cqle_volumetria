@@ -338,6 +338,8 @@ class VolumetriaController
         return 'SAUDÁVEL';
     }
 
+
+
     private function gerarRecomendacoes($servidor, $banco, $backup): array
     {
         $recomendacoes = [];
@@ -368,5 +370,38 @@ class VolumetriaController
         }
 
         return $recomendacoes;
+    }
+
+    public function showExecutivoReport(): void
+    {
+        try {
+            $result = $_SESSION['last_result'] ?? null;
+            if (!$result || !isset($result['success']) || !$result['success']) {
+                throw new \Exception("Nenhum resultado recente disponível. Faça uma nova análise primeiro.");
+            }
+
+            // Extrai informações do nome do arquivo para Ticket, Nome, Servidor
+            $filename = $result['arquivo_original'] ?? '';
+            $parts = explode('_', $filename);
+
+            $ticket = $parts[0] ?? 'Não identificado';
+            $clienteNome = $parts[1] ?? 'Não identificado';
+            $servidor = $parts[2] ?? 'Não identificado';
+
+            // Análise de volumetria (reutiliza a mesma)
+            $volumetriaAnalysis = $this->volumetriaAnalyzer->analyzeVolumetry(
+                $result['servidor'] ?? [],
+                $result['banco'] ?? [],
+                $result['backup'] ?? []
+            );
+
+            $analysis = $volumetriaAnalysis;
+
+            require BASE_PATH . '/views/executivo.php';
+        } catch (\Exception $e) {
+            $_SESSION['error'] = 'Erro ao gerar relatório executivo: ' . $e->getMessage();
+            header('Location: index.php?action=volumetria');
+            exit;
+        }
     }
 }

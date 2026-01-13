@@ -438,6 +438,9 @@
         <button onclick="window.history.back()" class="btn btn-secondary">
           ← Voltar aos Resultados
         </button>
+        <a href="index.php?action=executivo" class="btn btn-primary" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+          📄 Relatório Executivo
+        </a>
         <a href="index.php" class="btn btn-secondary">
           🏠 Nova Análise
         </a>

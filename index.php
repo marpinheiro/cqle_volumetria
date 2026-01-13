@@ -56,12 +56,21 @@ try {
             break;
 
         case 'volumetria':
-            // NOVA ROTA: Estudo de Volumetria
             if (isset($_SESSION['last_result'])) {
                 $controller->showVolumetryStudy($_SESSION['last_result']);
             } else {
                 $_SESSION['error'] = 'Nenhum resultado disponível. Faça uma análise primeiro.';
                 header('Location: index.php');
+            }
+            break;
+
+        case 'executivo':
+            // Novo case: Relatório Executivo
+            if (isset($_SESSION['last_result'])) {
+                $controller->showExecutivoReport($_SESSION['last_result']);
+            } else {
+                $_SESSION['error'] = 'Nenhum resultado disponível para o relatório executivo. Faça uma análise primeiro.';
+                header('Location: index.php?action=volumetria');
             }
             break;
 
@@ -75,8 +84,10 @@ try {
             }
             break;
 
+
+
         default:
-            header('Location: index.php');
+            header('Location: index.php?action=upload');
             break;
     }
 } catch (Exception $e) {
